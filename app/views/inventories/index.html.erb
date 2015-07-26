@@ -1,0 +1,17 @@
+<% provide(:title, "Welcome!") %>
+
+<div class="row">
+  <div class="col-sm-12">
+
+    <%= link_to 'Add New Asset', new_inventory_path %>
+
+    <h1>Inventory</h1>
+      <% @inventory.each do |inventory| %>
+        <div class="asset-show">
+          <ul>
+            <li><%= inventory.name %><span> </span><%= link_to 'View', inventory_path(inventory) %></span> <span><%= link_to 'Edit', edit_inventory_path(inventory) %></span></li>
+          </ul>
+        </div>
+        <% end %>
+  </div>
+</div>
