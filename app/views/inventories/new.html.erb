@@ -17,11 +17,14 @@
     </p>
     <p>
       <%= f.label "Equipment Type" %><br>
-      <%= f.text_field :equipment %>
-    </p>
+      <%= f.select :equipment, ['Laptop', 'Desktop', 'Tablet', 'Monitor'] %>
     <p>
       <%= f.label :model %><br>
       <%= f.text_field :model %>
+    </p>
+    <p>
+      <%= f.label "Purchase Date" %><br>
+      <%= f.date_field :purchasedate %>
     </p>
     <p>
       <%= f.label :owner %><br>

@@ -1,4 +1,6 @@
 <div class="row">
+  <div class="col-sm-12">
+
     <h1>Edit Asset:</h1>
     <%= form_for @inventory do |f| %>
       <% if @inventory.errors.any? %>
@@ -29,19 +31,25 @@
   </p>
   <p>
     <%= f.label "Equipment Type" %><br>
-    <%= f.text_field :equipment %>
-  </p>
+    <%= f.select :equipment, ['Laptop', 'Desktop', 'Tablet', 'Monitor'] %>
+  <p>
   <p>
     <%= f.label :model %><br>
     <%= f.text_field :model %>
+  </p>
+  <p>
+    <%= f.label "Purchase Date" %><br>
+    <%= f.date_field :purchasedate %>
   </p>
   <p>
     <%= f.label :owner %><br>
     <%= f.text_field :owner %>
   </p>
     <%= f.submit "Submit" %>
+
   <% end %>
 
   <% link_to 'Back', inventory_path %>
-  
+
+  </div>
 </div>

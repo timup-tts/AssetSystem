@@ -31,12 +31,26 @@ class InventoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @inventory = Inventory.find(params[:id])
+    @inventory.destroy
+
+    redirect_to inventories_path
+  end
+
 	def index
 		@inventory = Inventory.all
+
+    if params[:search]
+      @inventory = Inventory.search(params[:search]).order("created_at DESC")
+    else
+      @inventory = Inventory.all.order('created_at DESC')
+    end
 	end
+
 
   private
     def inventory_params
-      params.require(:inventory).permit(:name, :serial, :barcode, :model, :equipment, :owner)
+      params.require(:inventory).permit(:name, :serial, :barcode, :model, :equipment, :purchasedate, :comments, :owner)
     end
 end

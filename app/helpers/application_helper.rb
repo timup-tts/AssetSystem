@@ -7,4 +7,10 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def available_at
+  return super.to_datetime if super.respond_to?(:to_datetime)
+  DateTime.parse(super)
+end
+
 end

@@ -5,6 +5,13 @@
   <li>Serial: <%= @inventory.serial %></li>
   <li>Equipment Type: <%= @inventory.equipment %></li>
   <li>Model: <%= @inventory.model %></li>
+  <li>Purchase Date: <%= @inventory.purchasedate %></li>
   <li>Owner: <%= @inventory.owner %></li>
 </ul>
 </div>
+
+<%= link_to 'Delete', inventory_path,
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'Back', inventories_path %>
