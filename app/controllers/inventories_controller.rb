@@ -39,14 +39,12 @@ class InventoriesController < ApplicationController
   end
 
 	def index
-		@inventory = Inventory.all
-
-    if params[:search]
-      @inventory = Inventory.search(params[:search]).order("created_at DESC")
-    else
-      @inventory = Inventory.all.order('created_at DESC')
-    end
+		@inventory = Inventory.all.order("created_at DESC")
 	end
+
+  def search
+      @search_results = Inventory.search(params[:search]).order("created_at DESC")
+  end
 
 
   private

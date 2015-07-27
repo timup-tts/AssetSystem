@@ -1,7 +1,19 @@
 <div class="row">
   <div class="col-sm-12">
 
-  
+    <%= form_tag search_inventories_path, method: :get do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+    <% end %>
+
+    <h1>Search Results:</h1>
+    <% @search_results.each do |f| %>
+      <div class="asset-show">
+        <ul>
+          <li><%= f.name %></li>
+        </ul>
+      </div>
+      <% end %>
 
 </div>
 </div>
