@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-sm-12">
+
+    <h1>All Assets:</h1>
+    <% @inventory.each do |inventory| %>
+      <div class="asset-show">
+        <ul>
+          <li><%= inventory.name %><span> </span><%= link_to 'View', inventory_path(inventory) %></span> <span><%= link_to 'Edit', edit_inventory_path(inventory) %></span></li>
+          <li><%= link_to 'Delete', inventory_path(inventory),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+      </div>
+      <% end %>
+
+
+
+</div>
+</div>

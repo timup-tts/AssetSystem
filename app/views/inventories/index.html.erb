@@ -2,19 +2,49 @@
 
 <div class="row">
   <div class="col-sm-12">
-
-    <%= link_to 'Add New Asset', new_inventory_path %>
-
-    <h1>Inventory</h1>
-      <% @inventory.each do |inventory| %>
-        <div class="asset-show">
-          <ul>
-            <li><%= inventory.name %><span> </span><%= link_to 'View', inventory_path(inventory) %></span> <span><%= link_to 'Edit', edit_inventory_path(inventory) %></span></li>
-            <li><%= link_to 'Delete', inventory_path(inventory),
-                          method: :delete,
-                          data: { confirm: 'Are you sure?' } %></li>
-          </ul>
-        </div>
-        <% end %>
+    <%= link_to 'Add New Asset', new_inventory_path, class: "btn btn-primary" %>
   </div>
+</div>
+
+<div class="dashboard">
+  <div class="row">
+      <div class="col-sm-4">
+      <h5><%= link_to 'Total assets:', allassets_inventories_path %> <%= @total_assets %></h5>
+      <ul>
+        <li>Laptops: <%= @laptops %></li>
+        <li>Desktops: <%= @desktops %></li>
+        <li>Servers: <%= @servers %></li>
+        <li>Storage: <%= @desktops %></li>
+        <li>Printers: <%= @printers %></li>
+        <li>Phones: <%= @phones %></li>
+        <li>Tablets: <%= @tablets %></li>
+      <ul>
+      
+    </div>
+    <div class="col-sm-4">
+      <h5>Computers By Status</h5>
+      <ul>
+        <li>Operational:</li>
+        <li>Spare:</li>
+        <li>Disposed:</li>
+        <li>In Repair:</li>
+        <li>Stolen:</li>
+      </ul>
+    </div>
+    <div class="col-sm-4">
+      <h5>Contracts By Type</h5>
+      <ul>
+        <li>Software License:</li>
+        <li>Maintenance:</li>
+        <li>Lease:</li>
+        <li>Subscription:</li>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <h5>Contracts Expiring Soon</h5>
+    </div>
+  </div>
+
 </div>

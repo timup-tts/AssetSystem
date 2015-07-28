@@ -2,36 +2,7 @@
   <div class="col-sm-12">
     <h1>New Asset</h1>
 
-    <%= form_for :inventory, url: inventories_path do |f| %>
-      <p>
-        <%= f.label "Asset Name" %><br>
-      <%= f.text_field :name %>
-    </p>
-    <p>
-      <%= f.label :barcode %><br>
-      <%= f.text_field :barcode %>
-    </p>
-    <p>
-      <%= f.label :serial %><br>
-      <%= f.text_field :serial %>
-    </p>
-    <p>
-      <%= f.label "Equipment Type" %><br>
-      <%= f.select :equipment, ['Laptop', 'Desktop', 'Tablet', 'Monitor'] %>
-    <p>
-      <%= f.label :model %><br>
-      <%= f.text_field :model %>
-    </p>
-    <p>
-      <%= f.label "Purchase Date" %><br>
-      <%= f.date_field :purchasedate %>
-    </p>
-    <p>
-      <%= f.label :owner %><br>
-      <%= f.text_field :owner %>
-    </p>
-      <%= f.submit "Create" %>
-    <% end %>
+    <%= render 'layouts/assetform' %>
 
   </div>
 </div>

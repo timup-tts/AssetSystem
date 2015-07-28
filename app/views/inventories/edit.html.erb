@@ -2,52 +2,8 @@
   <div class="col-sm-12">
 
     <h1>Edit Asset:</h1>
-    <%= form_for @inventory do |f| %>
-      <% if @inventory.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@inventory.errors.count, "error") %> prohibited
-          this article from being saved:
-        </h2>
-        <ul>
-          <% @inventory.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
 
-    <p>
-      <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :barcode %><br>
-    <%= f.text_field :barcode %>
-  </p>
-  <p>
-    <%= f.label :serial %><br>
-    <%= f.text_field :serial %>
-  </p>
-  <p>
-    <%= f.label "Equipment Type" %><br>
-    <%= f.select :equipment, ['Laptop', 'Desktop', 'Tablet', 'Monitor'] %>
-  <p>
-  <p>
-    <%= f.label :model %><br>
-    <%= f.text_field :model %>
-  </p>
-  <p>
-    <%= f.label "Purchase Date" %><br>
-    <%= f.date_field :purchasedate %>
-  </p>
-  <p>
-    <%= f.label :owner %><br>
-    <%= f.text_field :owner %>
-  </p>
-    <%= f.submit "Submit" %>
-
-  <% end %>
+      <%= render 'layouts/assetform' %>
 
   <% link_to 'Back', inventory_path %>
 

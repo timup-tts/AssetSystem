@@ -40,15 +40,26 @@ class InventoriesController < ApplicationController
 
 	def index
 		@inventory = Inventory.all.order("created_at DESC")
+    @total_assets = Inventory.all.count
+    @laptops = Inventory.where(equipment: "Laptop").count
+    @desktops = Inventory.where(equipment: "Desktop").count
+    @servers = Inventory.where(equipment: "Server").count
+    @storage = Inventory.where(equipment: "Storage").count
+    @printers = Inventory.where(equipment: "Printer").count
+    @phones = Inventory.where(equipment: "Phone").count
+    @tablets = Inventory.where(equipment: "Tablet").count
 	end
 
   def search
-      @search_results = Inventory.search(params[:search]).order("created_at DESC")
+    @results = Inventory.search(params[:search])
   end
 
+  def allassets
+    @inventory = Inventory.all
+  end
 
   private
     def inventory_params
-      params.require(:inventory).permit(:name, :serial, :barcode, :model, :equipment, :purchasedate, :comments, :owner)
+      params.require(:inventory).permit(:name, :serial, :barcode, :model, :equipment, :purchasedate, :comments, :owner, :status)
     end
-end
+  end

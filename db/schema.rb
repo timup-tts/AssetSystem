@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150726214706) do
+ActiveRecord::Schema.define(version: 20150727214718) do
 
   create_table "inventories", force: :cascade do |t|
     t.datetime "created_at",   null: false
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150726214706) do
     t.integer  "user_id"
     t.datetime "purchasedate"
     t.text     "comments"
+    t.text     "status"
   end
 
   add_index "inventories", ["user_id"], name: "index_inventories_on_user_id"
