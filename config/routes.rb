@@ -4,10 +4,13 @@ Rails.application.routes.draw do
 
   resources :inventories do
     collection do
-      get 'search'
       get 'allassets'
     end
   end
+
+  resources :contracts
+
+  get 'search' => 'search#index', as: :search
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
