@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-sm-12">
+    <%= link_to 'Add New Contract', new_contract_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+
+    <div class="contracts">
+
+    <h1>All Contracts:</h1>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Agreement Number</th>
+          <th>Vendor</th>
+          <th>Status</th>
+          <th>End Date</th>
+          <th>Remove</th>
+        </tr>
+
+        <% @contracts.each do |contract| %>
+          <tr>
+            <td><%= link_to contract.contract_title, edit_contract_path(contract) %></td>
+            <td><%= contract.contract_number %></td>
+            <td><%= contract.vendor %></td>
+            <td><%= contract.status %></td>
+            <td><%= contract.end_date %></td>
+            <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, contract_path(contract),
+                              method: :delete,
+                              data: { confirm: 'Are you sure?' } %></td>
+          <tr>
+            <% end %>
+        </table>
+
+      </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'inventories#index'
+  root 'dashboard#index'
 
   resources :inventories do
     collection do
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   resources :contracts
+
+  get 'dashboard' => 'dashboard#index', as: :dashboard
 
   get 'search' => 'search#index', as: :search
 

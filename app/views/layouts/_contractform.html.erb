@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-sm-4">
+    <%= form_for @contract do |f| %>
+      <% if @contract.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@contract.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% @contract.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <p>
+      <%= f.label "Name" %><br>
+      <%= f.text_field :contract_title %>
+    </p>
+    <p>
+      <%= f.label "Agreement Number" %><br>
+      <%= f.text_field :contract_number %>
+    </p>
+    <p>
+      <%= f.label "Vendor" %><br>
+      <%= f.text_field :vendor %>
+    </p>
+    <p>
+      <%= f.label "Contact" %><br>
+      <%= f.text_field :contact %>
+    <p>
+      <%= f.label "Start Date" %><br>
+      <%= f.date_field :start_date %>
+    </p>
+    <p>
+      <%= f.label "End Date" %><br>
+      <%= f.date_field :end_date, :default=>Date.today.strftime("%d/%m/%Y") %>
+    </p>
+
+  </div>
+
+  <div class="col-sm-4">
+
+    <p>
+      <%= f.label "PO Number" %><br>
+      <%= f.text_field :po_number %>
+    </p>
+    <p>
+      <%= f.label "Purchase Date" %><br>
+      <%= f.date_field :purchase_date %>
+    </p>
+    <p>
+      <%= f.label "Cost" %><br>
+      <%= f.text_field :contract_cost %>
+    </p>
+    <p>
+      <%= f.label :status %><br>
+      <%= f.select :status, ['Active', 'Expired', 'Purchased'] %>
+    </p>
+    <p>
+      <%= f.label "Description" %><br>
+      <%= f.text_area :description %>
+    </p>
+      <%= f.submit "Submit" %>
+
+    <% end %>
+
+    </div>
+</div>

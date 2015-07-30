@@ -1,0 +1,21 @@
+<div class="asset-show">
+<ul>
+  <li>Name: <%= @contract.contract_title %></li>
+  <li>Agreement Number: <%= @contract.contract_number %></li>
+  <li>Vendor: <%= @contract.vendor %></li>
+  <li>Contact: <%= @contract.contact %></li>
+  <li>Start Date: <%= @contract.start_date %></li>
+  <li>End Date: <%= @contract.end_date%></li>
+  <li>PO Number: <%= @contract.po_number %></li>
+  <li>Purchase Date: <%= @contract.purchase_date %></li>
+  <li>Cost: <%= @contract.contract_cost %></li>
+  <li>Status: <%= @contract.status %></li>
+  <li>Description: <%= @contract.description %></li>
+</ul>
+</div>
+
+<%= link_to 'Delete', contract_path,
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'Back', contracts_path %>

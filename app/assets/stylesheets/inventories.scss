@@ -3,15 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 h1 {
-  font-size: 1.8em;
+  font-size: 1.5em;
 }
 
-.asset-show ul {
-  list-style: none;
-  padding-left: 0
+.assets td, th {
+  padding: 5px;
 }
 
-.dashboard ul {
-  list-style: none;
-  padding-left: 0;
+.remove_icon td {
+  text-align: center;
 }
