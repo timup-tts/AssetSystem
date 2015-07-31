@@ -18,19 +18,23 @@
           <th>Serial</th>
           <th>Owner</th>
           <th>Status</th>
+          <th>Edit</th>
           <th>Remove</th>
         <tr>
 
       <% @inventory.each do |inventory| %>
 
         <tr>
-          <td><%= link_to inventory.name, edit_inventory_path(inventory) %></td>
+          <td><%= link_to inventory.name, inventory_path(inventory) %></td>
           <td><%= inventory.equipment %></td>
           <td><%= inventory.model %></td>
           <td><%= inventory.serial %></td>
           <td><%= inventory.owner %></td>
           <td><%= inventory.status %></td>
-          <div class="remove_icon">
+          <div class="edit-icon">
+            <td><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_inventory_path(inventory) %></td>
+          </div>
+          <div class="remove-icon">
             <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, inventory_path(inventory),
                       method: :delete,
                       data: { confirm: 'Are you sure?' } %></td>

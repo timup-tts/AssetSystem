@@ -3,7 +3,7 @@
 <div class="dashboard">
   <div class="row">
       <div class="col-sm-4">
-      <h5><%= link_to 'Total assets:', allassets_inventories_path %> <%= @inventory.all.count %></h5>
+      <h5><%= link_to 'Total assets:', inventories_path %> <%= @inventory.all.count %></h5>
 
       <ul>
         <li>Laptops: <%= @inventory.where(equipment: "Laptop").count %></li>

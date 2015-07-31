@@ -6,10 +6,19 @@ h1 {
   font-size: 1.5em;
 }
 
+.asset-show ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.asset-show strong {
+  padding-right: 5px;
+}
+
 .assets td, th {
   padding: 5px;
 }
 
-.remove_icon td {
+.remove-icon td {
   text-align: center;
 }

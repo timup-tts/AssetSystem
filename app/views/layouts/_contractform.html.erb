@@ -1,6 +1,6 @@
+<%= form_for @contract, html: { multipart: true } do |f| %>
 <div class="row">
-
-    <%= form_for @contract, html: { multipart: true } do |f| %>
+  <div class="form-group col-sm-4">
         <% if @contract.errors.any? %>
         <div id="error_explanation">
           <h2>
@@ -39,9 +39,9 @@
       <%= f.date_field :end_date, :default=>Date.today.strftime("%d/%m/%Y") %>
     </p>
 
+  </div>
 
-
-
+  <div class="form-group col-sm-4">
 
     <p>
       <%= f.label "PO Number" %><br>
@@ -62,13 +62,14 @@
     <p>
       <%= f.label "Attachment" %><br>
       <%= f.file_field :contract_attach %>
+      <p>Attached:</p>
+      <p><%= link_to @contract.contract_attach_file_name, @contract.contract_attach.url %></p>
     <p>
       <%= f.label "Description" %><br>
       <%= f.text_area :description %>
     </p>
       <%= f.submit "Submit" %>
 
-    <% end %>
-
-
-</div>
+    </div>
+  </div>
+<% end %>

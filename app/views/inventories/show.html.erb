@@ -1,18 +1,24 @@
 <div class="asset-show">
-<ul>
-  <li>Name: <%= @inventory.name %></li>
-  <li>Barcode: <%= @inventory.barcode %></li>
-  <li>Serial: <%= @inventory.serial %></li>
-  <li>Equipment Type: <%= @inventory.equipment %></li>
-  <li>Model: <%= @inventory.model %></li>
-  <li>Purchase Date: <%= @inventory.purchasedate %></li>
-  <li>Status: <%= @inventory.status %></li>
-  <li>Owner: <%= @inventory.owner %></li>
-</ul>
+  <i class="fa fa-arrow-left"></i> <%= link_to 'Back', inventories_path %>
+
+  <h1>Asset Details</h1>
+
+  <ul>
+    <li><strong>Name:</strong> <%= @inventory.name %></li>
+    <li><strong>Barcode:</strong> <%= @inventory.barcode %></li>
+    <li><strong>Serial:</strong> <%= @inventory.serial %></li>
+    <li><strong>Equipment Type:</strong> <%= @inventory.equipment %></li>
+    <li><strong>Model:</strong> <%= @inventory.model %></li>
+    <li><strong>Purchase Date:</strong> <%= @inventory.purchasedate %></li>
+    <li><strong>Status:</strong> <%= @inventory.status %></li>
+    <li><strong>Owner:</strong> <%= @inventory.owner %></li>
+    <li><strong>Comments:</strong> <%= @inventory.comments %></li>
+  </ul>
 </div>
+
+<%= link_to 'Edit', edit_inventory_path, class: "btn btn-primary" %>
 
 <%= link_to 'Delete', inventory_path,
               method: :delete,
+              class: "btn btn-primary",
               data: { confirm: 'Are you sure?' } %>
-
-<%= link_to 'Back', inventories_path %>

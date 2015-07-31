@@ -44,10 +44,6 @@ class InventoriesController < ApplicationController
     @contract = Contract.all
 	end
 
-  def search
-    @results = Inventory.search(params[:search])
-  end
-
   private
     def inventory_params
       params.require(:inventory).permit(

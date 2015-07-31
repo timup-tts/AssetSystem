@@ -1,4 +1,8 @@
 <div class="contract-show">
+  <i class="fa fa-arrow-left"></i> <%= link_to 'Back', contracts_path %>
+
+  <h1>Contract Details</h1>
+
 <ul>
   <li><strong>Name:</strong> <%= @contract.contract_title %></li>
   <li><strong>Agreement Number:</strong> <%= @contract.contract_number %></li>
@@ -11,15 +15,14 @@
   <li><strong>Cost:</strong> <%= @contract.contract_cost %></li>
   <li><strong>Status:</strong> <%= @contract.status %></li>
   <li><strong>Attachment:</strong> <%= link_to @contract.contract_attach_file_name, @contract.contract_attach.url %></li>
-  <%= link_to 'Delete', contract_path,
-                method: :destroy_attachment,
-                data: { confirm: 'Are you sure?' } %>
+
   <li><strong>Description:</strong> <%= @contract.description %></li>
 </ul>
 </div>
 
+<%= link_to 'Edit', edit_contract_path, class: "btn btn-primary" %>
+
 <%= link_to 'Delete', contract_path,
               method: :delete,
+              class: "btn btn-primary",
               data: { confirm: 'Are you sure?' } %>
-
-<%= link_to 'Back', contracts_path %>

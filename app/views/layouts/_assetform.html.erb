@@ -1,7 +1,6 @@
-<div class="row">
-    <div class="form-group col-sm-4">
-
-      <%= form_for @inventory do |f| %>
+<%= form_for @inventory do |f| %>
+        <div class="row">
+          <div class="form-group col-sm-4">
         <% if @inventory.errors.any? %>
         <div id="error_explanation">
           <h2>
@@ -35,6 +34,7 @@
         <%= f.label :model %><br>
         <%= f.text_field :model %>
       </p>
+
     </div>
 
     <div class="form-group col-sm-4">
@@ -57,6 +57,6 @@
       </p>
         <%= f.submit "Submit" %>
 
-      <% end %>
+      </div>
     </div>
-</div>
+      <% end %>
