@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729175603) do
+ActiveRecord::Schema.define(version: 20150731144221) do
 
   create_table "contracts", force: :cascade do |t|
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.text     "contract_number"
     t.text     "contract_title"
     t.datetime "start_date"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 20150729175603) do
     t.text     "po_number"
     t.datetime "purchase_date"
     t.text     "contract_cost"
+    t.string   "contract_attach_file_name"
+    t.string   "contract_attach_content_type"
+    t.integer  "contract_attach_file_size"
+    t.datetime "contract_attach_updated_at"
   end
 
   create_table "inventories", force: :cascade do |t|

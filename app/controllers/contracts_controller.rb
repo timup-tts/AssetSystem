@@ -34,8 +34,12 @@ class ContractsController < ApplicationController
   def destroy
     @contract = Contract.find(params[:id])
     @contract.destroy
-
     redirect_to contracts_path
+  end
+
+  def destroy_attachment
+    @contract.contract_attach = nil
+    @contract.save
   end
 
   def index
@@ -55,7 +59,8 @@ private
     :description,
     :po_number,
     :purchase_date,
-    :contract_cost
+    :contract_cost,
+    :contract_attach
     )
   end
 

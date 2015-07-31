@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="form-group col-sm-4">
-    <%= form_for @contract do |f| %>
+
+    <%= form_for @contract, html: { multipart: true } do |f| %>
         <% if @contract.errors.any? %>
         <div id="error_explanation">
           <h2>
@@ -39,9 +39,9 @@
       <%= f.date_field :end_date, :default=>Date.today.strftime("%d/%m/%Y") %>
     </p>
 
-  </div>
 
-  <div class="form-group col-sm-4">
+
+
 
     <p>
       <%= f.label "PO Number" %><br>
@@ -60,6 +60,9 @@
       <%= f.select :status, ['Active', 'Expired', 'Purchased'] %>
     </p>
     <p>
+      <%= f.label "Attachment" %><br>
+      <%= f.file_field :contract_attach %>
+    <p>
       <%= f.label "Description" %><br>
       <%= f.text_area :description %>
     </p>
@@ -67,5 +70,5 @@
 
     <% end %>
 
-    </div>
+
 </div>
