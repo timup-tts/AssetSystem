@@ -1,19 +1,19 @@
 <div class="row">
-  <div class="col-sm-4">
+  <div class="form-group col-sm-4">
     <%= form_for @contract do |f| %>
-      <% if @contract.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@contract.errors.count, "error") %> prohibited
-          this article from being saved:
-        </h2>
-        <ul>
-          <% @contract.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+        <% if @contract.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@contract.errors.count, "error") %> prohibited
+            this article from being saved:
+          </h2>
+          <ul>
+            <% @contract.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
     <p>
       <%= f.label "Name" %><br>
@@ -41,7 +41,7 @@
 
   </div>
 
-  <div class="col-sm-4">
+  <div class="form-group col-sm-4">
 
     <p>
       <%= f.label "PO Number" %><br>
