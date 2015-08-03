@@ -55,7 +55,11 @@ class InventoriesController < ApplicationController
       :purchasedate,
       :comments,
       :owner,
-      :status
+      :status,
+      :operating_system,
+      :department,
+      :ip_address,
+      :service_tag
       )
     end
   end

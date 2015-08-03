@@ -2,8 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//######### Main ############
+
 h1 {
   font-size: 1.5em;
+}
+
+.remove-icon td {
+  text-align: center;
+}
+
+//######### Contracts Show ###########
+
+.contracts td, th {
+  padding: 8px 15px;
+  border: solid 1px #dedede;
+}
+
+.contract-show ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contract-show li {
+  padding-bottom: 5px;
+}
+
+.contract-show strong {
+  padding-right: 5px;
+}
+
+//########## Assets Show ############
+
+.asset-show {
+  margin-bottom: 2em;
 }
 
 .asset-show ul {
@@ -16,9 +48,39 @@ h1 {
 }
 
 .assets td, th {
-  padding: 5px;
+  padding: 8px 15px;
+  border: solid 1px #dedede;
 }
 
-.remove-icon td {
-  text-align: center;
+.asset-show li {
+  padding-bottom: 5px;
+}
+
+.show-buttons span {
+  padding-right: 15px;
+}
+
+//######### Dashboard ############
+
+.dashboard ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+//######## Forms ############
+
+.new_inventory label, .edit_inventory label {
+  padding: 10px 0px;
+}
+
+.new_inventory input[type="submit"], .edit_inventory input[type="submit"]  {
+  margin-top: 10px;
+}
+
+.new_contract label, .edit_contract label {
+  padding: 10px 0px;
+}
+
+.new_contract input[type="submit"], .edit_contract input[type="submit"] {
+  margin-top: 10px;
 }

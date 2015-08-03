@@ -3,22 +3,47 @@
 
   <h1>Asset Details</h1>
 
-  <ul>
-    <li><strong>Name:</strong> <%= @inventory.name %></li>
-    <li><strong>Barcode:</strong> <%= @inventory.barcode %></li>
-    <li><strong>Serial:</strong> <%= @inventory.serial %></li>
-    <li><strong>Equipment Type:</strong> <%= @inventory.equipment %></li>
-    <li><strong>Model:</strong> <%= @inventory.model %></li>
-    <li><strong>Purchase Date:</strong> <%= @inventory.purchasedate %></li>
-    <li><strong>Status:</strong> <%= @inventory.status %></li>
-    <li><strong>Owner:</strong> <%= @inventory.owner %></li>
-    <li><strong>Comments:</strong> <%= @inventory.comments %></li>
-  </ul>
+  <div class="row">
+    <div class="col-sm-4">
+      <ul>
+        <li><strong>Name:</strong> <%= @inventory.name %></li>
+        <li><strong>Barcode:</strong> <%= @inventory.barcode %></li>
+        <li><strong>Equipment Type:</strong> <%= @inventory.equipment %></li>
+        <li><strong>Manufacturer:</strong> <%= @inventory.manufacturer %></li>
+        <li><strong>Model:</strong> <%= @inventory.model %></li>
+        <li><strong>Serial:</strong> <%= @inventory.serial %></li>
+        <li><strong>Service Tag:</strong> <%= @inventory.service_tag %></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-4">
+      <ul>
+        <li><strong>Operating System:</strong> <%= @inventory.operating_system %></li>
+        <li><strong>IP Address:</strong> <%= @inventory.ip_address %></li>
+        <li><strong>Purchase Date:</strong> <%= @inventory.purchasedate %></li>
+        <li><strong>Status:</strong> <%= @inventory.status %></li>
+        <li><strong>Owner:</strong> <%= @inventory.owner %></li>
+        <li><strong>Department:</strong> <%= @inventory.department %></li>
+      </ul>
+    </div>
 </div>
 
-<%= link_to 'Edit', edit_inventory_path, class: "btn btn-primary" %>
+<div class="row">
+  <div class="col-sm-6">
+    <ul>
+      <li><strong>Comments:</strong> <%= @inventory.comments %></li>
+    </ul>
+  </div>
+</div>
 
-<%= link_to 'Delete', inventory_path,
-              method: :delete,
-              class: "btn btn-primary",
-              data: { confirm: 'Are you sure?' } %>
+</div>
+
+<div class="show-buttons">
+
+  <span><%= link_to 'Edit', edit_inventory_path, class: "btn btn-primary btn-sm" %></span>
+
+  <span><%= link_to 'Delete', inventory_path,
+                method: :delete,
+                class: "btn btn-primary btn-sm",
+                  data: { confirm: 'Are you sure?' } %></span>
+</div>

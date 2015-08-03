@@ -15,48 +15,65 @@
         </div>
       <% end %>
 
-      <p>
-        <%= f.label "Asset Name" %><br>
-        <%= f.text_field :name %>
-      </p>
-      <p>
-        <%= f.label :barcode %><br>
-        <%= f.text_field :barcode %>
-      </p>
-      <p>
-        <%= f.label :serial %><br>
-        <%= f.text_field :serial %>
-      </p>
-      <p>
+        <%= f.label "Asset Name" %>
+        <%= f.text_field :name, class: 'form-control' %>
+
+        <%= f.label :barcode %>
+        <%= f.text_field :barcode, class: 'form-control' %>
+
+        <%= f.label :serial %>
+        <%= f.text_field :serial, class: 'form-control' %>
+
+        <%= f.label "Service Tag" %>
+        <%= f.text_field :service_tag, class: 'form-control' %>
+
         <%= f.label "Equipment Type" %><br>
-        <%= f.select :equipment, ['Laptop', 'Desktop', 'Tablet', 'Server', 'Storage', 'Switch', 'Router', 'Wireless AP'] %>
-      <p>
-        <%= f.label :model %><br>
-        <%= f.text_field :model %>
-      </p>
+        <%= f.select :equipment, ['Laptop', 'Desktop', 'Tablet', 'Server', 'Storage', 'Switch', 'Router', 'Wireless AP'] %><br>
 
     </div>
 
     <div class="form-group col-sm-4">
 
-      <p>
-        <%= f.label "Purchase Date" %><br>
-        <%= f.date_field :purchasedate %>
-      </p>
-      <p>
-        <%= f.label :owner %><br>
-        <%= f.text_field :owner %>
-      </p>
-      <p>
+        <%= f.label :manufacturer %>
+        <%= f.text_field :manufacturer, class: 'form-control' %>
+
+        <%= f.label :model %>
+        <%= f.text_field :model, class: 'form-control' %>
+
+        <%= f.label :owner %>
+        <%= f.text_field :owner, class: 'form-control' %>
+
+        <%= f.label :department %>
+        <%= f.text_field :department, class: 'form-control' %>
+
         <%= f.label :status %><br>
-        <%= f.select :status, ['In Use', 'Spare', 'Disposed', 'In Repair', 'Lost', 'Stolen'] %>
-      </p>
-      <p>
-        <%= f.label :comments %><br>
-        <%= f.text_area :comments %>
-      </p>
-        <%= f.submit "Submit" %>
+        <%= f.select :status, ['In Use', 'Spare', 'Disposed', 'In Repair', 'Lost', 'Stolen'], class: 'form-control' %>
 
       </div>
+
+      <div class="form-group col-sm-4">
+
+          <%= f.label "Purchase Date" %>
+          <%= f.date_field :purchasedate, class: 'form-control' %>
+
+          <%= f.label "IP Address" %>
+          <%= f.text_field :ip_address, class: 'form-control' %>
+
+          <%= f.label "Operating System" %>
+          <%= f.text_field :operating_system, class: 'form-control' %>
+
+      </div>
+
     </div>
-      <% end %>
+
+      <div class="row">
+          <div class="form-group col-sm-6">
+            <%= f.label :comments %>
+            <%= f.text_area :comments, class: 'form-control' %>
+
+            <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
+
+          </div>
+      </div>
+
+<% end %>

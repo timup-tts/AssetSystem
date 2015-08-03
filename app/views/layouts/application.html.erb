@@ -7,14 +7,14 @@
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <%= render 'layouts/navbar' %>
+<div id="wrapper">
 
-  <div class="container">
+  <%= render 'layouts/navbar' %>
 
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
@@ -23,12 +23,23 @@
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
 
-<%= yield %>
-
-  </div>
+       <div id="page-wrapper">
+           <div class="container-fluid">
+               <div class="row">
+                   <div class="col-lg-12">
+                        <div id="page-header">
+                          <%= yield %>
+                       </div>
+                   </div>
+               </div>
+           </div>
+      </div>
+</div>
 
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 
 </html>

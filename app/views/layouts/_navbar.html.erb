@@ -1,31 +1,72 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "Asset Inventory", root_path, class: "navbar-brand" %>
-    </div>
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <%= link_to "AssetRails", root_path, class: "navbar-brand" %>
+            </div>
+            <!-- /.navbar-header -->
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Assets", inventories_path %></li>
-        <li><%= link_to "Contracts", contracts_path %></li>
-      </ul>
+            <ul class="nav navbar-top-links navbar-right">
 
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-        <%= form_tag search_path, class: "navbar-form", method: :get do %>
-        <%= text_field_tag 'keyword', nil %>
-        <%= submit_tag "Search", :name => nil %>
-        <% end %>
-      </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <%= form_tag search_path, class: 'form-inline', method: :get do %>
+                            <%= text_field_tag 'keyword', nil, class: 'form-control' %>
+                            <%= button_tag '<i class="fa fa-search"></i>'.html_safe, class: 'btn btn-default', :name => nil %>
+                            <% end %>
+                        </li>
+                        <li><%= link_to '<i class="fa fa-dashboard fa-fw"></i> Dashboard'.html_safe, root_path %></li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Assets<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><%= link_to 'Add New Asset', new_inventory_path %></li>
+                                <li><%= link_to 'View Assets', inventories_path %></li>
+                                <li><a href="#">Categories<span class="fa arrow"></span></a>
+                                  <ul class="nav nav-third-level">
+                                    <li><%= link_to 'Laptops', controller: "search", keyword: "Laptop" %></li>
+                                    <li><%= link_to 'Desktop', controller: "search", keyword: "Desktop" %></li>
+                                    <li><%= link_to 'Servers', controller: "search", keyword: "Printer" %></li>
+                                    <li><%= link_to 'Printers', controller: "search", keyword: "Laptop" %></li>
+                                    <li><%= link_to 'Switches/Routers', controller: "search", keyword: "Laptop" %></li>
+                                    <li><%= link_to 'Tablets', controller: "search", keyword: "Laptop" %></li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Contracts<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                              <li><%= link_to 'Add New Contract', new_contract_path %></li>
+                              <li><%= link_to 'View Contracts', contracts_path %></li>
+                            </ul>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>

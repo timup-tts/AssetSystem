@@ -3,26 +3,44 @@
 
   <h1>Contract Details</h1>
 
-<ul>
-  <li><strong>Name:</strong> <%= @contract.contract_title %></li>
-  <li><strong>Agreement Number:</strong> <%= @contract.contract_number %></li>
-  <li><strong>Vendor:</strong> <%= @contract.vendor %></li>
-  <li><strong>Contact:</strong> <%= @contract.contact %></li>
-  <li><strong>Start Date:</strong> <%= @contract.start_date %></li>
-  <li><strong>End Date:</strong> <%= @contract.end_date%></li>
-  <li><strong>PO Number:</strong> <%= @contract.po_number %></li>
-  <li><strong>Purchase Date:</strong> <%= @contract.purchase_date %></li>
-  <li><strong>Cost:</strong> <%= @contract.contract_cost %></li>
-  <li><strong>Status:</strong> <%= @contract.status %></li>
-  <li><strong>Attachment:</strong> <%= link_to @contract.contract_attach_file_name, @contract.contract_attach.url %></li>
+  <div class="row">
+    <div class="col-sm-4">
+      <ul>
+        <li><strong>Name:</strong> <%= @contract.contract_title %></li>
+        <li><strong>Agreement Number:</strong> <%= @contract.contract_number %></li>
+        <li><strong>Vendor:</strong> <%= @contract.vendor %></li>
+        <li><strong>Contact:</strong> <%= @contract.contact %></li>
+        <li><strong>Start Date:</strong> <%= @contract.start_date %></li>
+        <li><strong>End Date:</strong> <%= @contract.end_date%></li>
+      </ul>
+    </div>
 
-  <li><strong>Description:</strong> <%= @contract.description %></li>
-</ul>
+    <div class="col-sm-4">
+      <ul>
+        <li><strong>PO Number:</strong> <%= @contract.po_number %></li>
+        <li><strong>Purchase Date:</strong> <%= @contract.purchase_date %></li>
+        <li><strong>Cost:</strong> <%= @contract.contract_cost %></li>
+        <li><strong>Status:</strong> <%= @contract.status %></li>
+        <li><strong>Attachment:</strong> <%= link_to @contract.contract_attach_file_name, @contract.contract_attach.url %></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <ul>
+        <li><strong>Description:</strong> <%= @contract.description %></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<%= link_to 'Edit', edit_contract_path, class: "btn btn-primary" %>
+<div class="show-buttons">
 
-<%= link_to 'Delete', contract_path,
+    <span><%= link_to 'Edit', edit_contract_path, class: "btn btn-primary btn-sm" %></span>
+
+    <span><%= link_to 'Delete', contract_path,
               method: :delete,
-              class: "btn btn-primary",
-              data: { confirm: 'Are you sure?' } %>
+              class: "btn btn-primary btn-sm",
+              data: { confirm: 'Are you sure?' } %></span>
+</div>
