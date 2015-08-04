@@ -40,6 +40,9 @@
       <%= f.label "Cost" %>
       <%= f.text_field :contract_cost, class: 'form-control' %>
 
+      <%= f.label :contract_type %><br>
+      <%= f.select :contract_type, ['Maintenance', 'Lease', 'Support', 'Subscription'], class: 'form-control' %><br>
+
     </div>
 
     <div class="form-group col-sm-4">
@@ -60,8 +63,10 @@
     <div class="form-group col-sm-6">
       <%= f.label "Attachment" %>
       <%= f.file_field :contract_attach, class: 'form-control' %><br>
+      <% if @contract.contract_attach.file? %>
       <p>Attached:</p>
       <p><%= link_to @contract.contract_attach_file_name, @contract.contract_attach.url %></p>
+      <% end %>
     </div>
   </div>
 

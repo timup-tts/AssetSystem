@@ -2,6 +2,7 @@ class DashboardController < ApplicationController
 
   def index
     @inventory = Inventory.all
+    @contract = Contract.all
   end
 
   def total_assets

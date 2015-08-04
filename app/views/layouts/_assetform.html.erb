@@ -28,7 +28,7 @@
         <%= f.text_field :service_tag, class: 'form-control' %>
 
         <%= f.label "Equipment Type" %><br>
-        <%= f.select :equipment, ['Laptop', 'Desktop', 'Tablet', 'Server', 'Storage', 'Switch', 'Router', 'Wireless AP'] %><br>
+        <%= f.select :equipment, ['Laptop', 'Desktop', 'Tablet', 'Server', 'Storage', 'Switch', 'Router', 'Wireless AP'], class: 'form-control' %><br>
 
     </div>
 
@@ -59,8 +59,8 @@
           <%= f.label "IP Address" %>
           <%= f.text_field :ip_address, class: 'form-control' %>
 
-          <%= f.label "Operating System" %>
-          <%= f.text_field :operating_system, class: 'form-control' %>
+          <%= f.label "Operating System" %><br>
+          <%= f.select :operating_system, ['Windows XP','Windows 7','Windows 8/8.1','Windows 10','Windows 2003','Windows 2008','Windows 2012'], class: 'form-control' %>
 
       </div>
 

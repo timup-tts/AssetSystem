@@ -12,14 +12,16 @@
       <h5>Equipment By Status</h5>
       <%= column_chart @inventory.group(:status).count %>
     </div>
-    <div class="col-sm-4">
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm-5">
       <h5>Contracts By Type</h5>
-      <ul>
-        <li>Software License:</li>
-        <li>Maintenance:</li>
-        <li>Lease:</li>
-        <li>Subscription:</li>
+      <%= pie_chart @contract.group(:contract_type).count %>
     </div>
+
   </div>
 
   <div class="row">

@@ -7,6 +7,7 @@ class ContractsController < ApplicationController
     @contract = Contract.new(contract_params)
 
     if @contract.save
+      flash[:notice] = "Contract successfuly created."
     	redirect_to @contract
 		else
 			render 'new'
@@ -33,8 +34,10 @@ class ContractsController < ApplicationController
 
   def destroy
     @contract = Contract.find(params[:id])
-    @contract.destroy
-    redirect_to contracts_path
+    if @contract.destroy
+      flash[:notice] = "Contract successfuly deleted."
+      redirect_to contracts_path
+    end
   end
 
   def destroy_attachment
@@ -60,7 +63,8 @@ private
     :po_number,
     :purchase_date,
     :contract_cost,
-    :contract_attach
+    :contract_attach,
+    :contract_type
     )
   end
 

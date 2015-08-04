@@ -44,10 +44,6 @@ class InventoriesController < ApplicationController
     @contract = Contract.all
 	end
 
-  def total_assets
-    render json: Inventory.group(:equipment).count
-  end
-
   private
     def inventory_params
       params.require(:inventory).permit(

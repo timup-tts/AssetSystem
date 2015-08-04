@@ -11,46 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803172643) do
+ActiveRecord::Schema.define(version: 20150804160149) do
 
   create_table "contracts", force: :cascade do |t|
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.text     "contract_number"
-    t.text     "contract_title"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.text     "vendor"
-    t.text     "status"
-    t.text     "contact"
+    t.string   "contract_number"
+    t.string   "contract_title"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "vendor"
+    t.string   "status"
+    t.string   "contact"
     t.text     "description"
-    t.text     "po_number"
-    t.datetime "purchase_date"
-    t.text     "contract_cost"
+    t.string   "po_number"
+    t.date     "purchase_date"
+    t.string   "contract_cost"
     t.string   "contract_attach_file_name"
     t.string   "contract_attach_content_type"
     t.integer  "contract_attach_file_size"
     t.datetime "contract_attach_updated_at"
+    t.string   "contract_type"
   end
 
   create_table "inventories", force: :cascade do |t|
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.text     "name"
-    t.text     "barcode"
-    t.text     "serial"
-    t.text     "model"
-    t.text     "equipment"
-    t.text     "owner"
+    t.string   "name"
+    t.string   "barcode"
+    t.string   "serial"
+    t.string   "model"
+    t.string   "equipment"
+    t.string   "owner"
     t.integer  "user_id"
     t.datetime "purchasedate"
     t.text     "comments"
-    t.text     "status"
-    t.text     "manufacturer"
-    t.text     "ip_address"
-    t.text     "department"
-    t.text     "service_tag"
-    t.text     "operating_system"
+    t.string   "status"
+    t.string   "manufacturer"
+    t.string   "ip_address"
+    t.string   "department"
+    t.string   "service_tag"
+    t.string   "operating_system"
+    t.date     "purchase_date"
   end
 
   add_index "inventories", ["user_id"], name: "index_inventories_on_user_id"

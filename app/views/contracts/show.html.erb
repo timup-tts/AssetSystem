@@ -21,6 +21,7 @@
         <li><strong>Purchase Date:</strong> <%= @contract.purchase_date %></li>
         <li><strong>Cost:</strong> <%= @contract.contract_cost %></li>
         <li><strong>Status:</strong> <%= @contract.status %></li>
+        <li><strong>Type:</strong> <%= @contract.contract_type %></li>
         <li><strong>Attachment:</strong> <%= link_to @contract.contract_attach_file_name, @contract.contract_attach.url %></li>
       </ul>
     </div>
@@ -41,6 +42,5 @@
 
     <span><%= link_to 'Delete', contract_path,
               method: :delete,
-              class: "btn btn-primary btn-sm",
-              data: { confirm: 'Are you sure?' } %></span>
+              data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %></span>
 </div>
