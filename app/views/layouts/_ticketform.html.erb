@@ -1,0 +1,45 @@
+<%= form_for @ticket do |f| %>
+<div class="row">
+  <div class="form-group col-sm-6">
+    <% if @ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@ticket.errors.count, "error") %>
+        prohibited this article from being saved:
+      </h2>
+      <ul>
+        <% @ticket.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <%= f.label "Contact" %>
+    <%= f.text_field :contact, class: 'form-control' %>
+
+    <%= f.label :severity %><br>
+    <%= f.select :severity, ['Low','Medium','High'], class: 'form-control' %><br>
+
+    <%= f.label :status %><br>
+    <%= f.select :status, ['Working','Pending On Customer','Pending on Vendor','On Hold','In Queue'], class: 'form-control' %><br>
+
+    <%= f.label "Summary" %>
+    <%= f.text_field :summary, class: 'form-control' %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+
+    <%= f.label "Attachment" %>
+    <%= f.file_field :attachment, class: 'form-control' %><br>
+    <% if @ticket.attachment.file? %>
+    <p>Attached:</p>
+    <p><%= link_to @ticket.attachment_file_name, @ticket.attachment.url %></p>
+    <% end %>
+
+    <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
+
+  </div>
+</div>
+
+<% end %>

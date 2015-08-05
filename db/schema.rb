@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804160149) do
+ActiveRecord::Schema.define(version: 20150804191830) do
 
   create_table "contracts", force: :cascade do |t|
     t.datetime "created_at",                   null: false
@@ -60,6 +60,21 @@ ActiveRecord::Schema.define(version: 20150804160149) do
   create_table "searches", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "contact"
+    t.string   "severity"
+    t.string   "assigned"
+    t.string   "summary"
+    t.text     "description"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.string   "status"
   end
 
 end

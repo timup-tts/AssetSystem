@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :contracts
 
+  resources :tickets
+
   get 'dashboard' => 'dashboard#index', as: :dashboard
 
   get 'search' => 'search#index', as: :search

@@ -1,0 +1,28 @@
+<div class="record-show">
+  <i class="fa fa-arrow-left"></i> <%= link_to 'Back', tickets_path %>
+
+  <h1>Ticket Details</h1>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <ul>
+        <li><strong>Contact:</strong> <%= @ticket.contact %></li>
+        <li><strong>Severity:</strong> <%= @ticket.severity %></li>
+        <li><strong>Assigned:</strong> <%= @ticket.assigned %></li>
+        <li><strong>Summary:</strong> <%= @ticket.summary %></li>
+        <li><strong>Description:</strong> <%= @ticket.description %></li>
+        <li><strong>Attachment:</strong> <%= link_to @ticket.attachment, @ticket.attachment.url %></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="show-buttons">
+
+    <span><%= link_to 'Edit', edit_ticket_path, class: "btn btn-primary btn-sm" %></span>
+
+    <span><%= link_to 'Delete', ticket_path,
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %></span>
+</div>

@@ -2,10 +2,13 @@
   <% if @results.blank? %>
     <li><i>No Results</i></li>
   <% else %>
+  <h1>Search Results</h1>
     <% @results.each do |result| %>
+    <ul>
       <li>
         <%= link_to result.try(:name), inventory_path(result) %>
       </li>
+    <ul>
     <% end %>
   <% end %>
 </ul>

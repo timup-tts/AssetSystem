@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-sm-12">
+    <%= link_to 'Create New Ticket', new_ticket_path, class: "btn btn-primary btn-sm" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+
+    <div class="tickets">
+
+      <h1>All Tickets:</h1>
+      <table>
+        <tr>
+          <th>Contact</th>
+          <th>Severity</th>
+          <th>Assigned</th>
+          <th>Summary</th>
+          <th>Status</th>
+          <th>Edit</edit>
+          <th>Remove</th>
+        </tr>
+
+        <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%= link_to ticket.contact, ticket_path(ticket) %></td>
+          <td><%= ticket.severity %></td>
+          <td><%= ticket.assigned %></td>
+          <td><%= ticket.summary %></td>
+          <td><%= ticket.status %></td>
+          <div class="edit-icon">
+            <td><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_ticket_path(ticket) %></td>
+          </div>
+          <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, ticket_path(ticket),
+                              method: :delete,
+                              data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </table>
+
+        </div>
+      </div>
+    </div>
