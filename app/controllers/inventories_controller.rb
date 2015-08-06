@@ -41,7 +41,8 @@ class InventoriesController < ApplicationController
   end
 
 	def index
-		@inventory = Inventory.all
+    @inventory = Inventory.all
+    @inventory = Inventory.paginate(page: params[:page], per_page: 3)
 	end
 
   private

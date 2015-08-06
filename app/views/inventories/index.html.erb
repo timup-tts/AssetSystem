@@ -10,21 +10,22 @@
 
       <h1>All Assets:</h1>
 
-      <table id="show-table" class="tablesorter">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Model</th>
-            <th>Serial</th>
-            <th>Owner</th>
-            <th>Status</th>
-            <th>Edit</th>
-            <th>Remove</th>
-          </tr>
-        </thead>
+      <div class="table-responsive">
+        <table class="tablesorter table table-hover" id="show-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Model</th>
+              <th>Serial</th>
+              <th>Owner</th>
+              <th>Status</th>
+              <th>Edit</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
 
-        <tbody>
+          <tbody>
             <% @inventory.each do |inventory| %>
             <tr>
               <td><%= link_to inventory.name, inventory_path(inventory) %></td>
@@ -46,8 +47,11 @@
             <% end %>
           </tbody>
 
-          </table>
-
-        </div>
+        </table>
       </div>
+
+      <%= will_paginate @inventory, renderer: BootstrapPagination::Rails %>
+
     </div>
+  </div>
+</div>
