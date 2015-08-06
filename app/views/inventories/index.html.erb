@@ -1,7 +1,34 @@
 <div class="row">
   <div class="col-sm-12">
-    <%= link_to 'Add New Asset', new_inventory_path, class: "btn btn-primary btn-sm" %>
-  </div>
+  
+    <ul class="nav nav-pills">
+    <li role="presenation"> <%= link_to 'Add New Asset', new_inventory_path %></li>
+    <li role="presentation" class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Equipment Type<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><%= link_to "All", inventories_path %></li>
+        <li><%= link_to "Laptops", controller: "inventories", equipment: "Laptop" %></li>
+        <li><%= link_to "Desktops", controller: "inventories", equipment: "Desktop" %></li>
+        <li><%= link_to "Servers", controller: "inventories", equipment: "Server" %></li>
+        <li><%= link_to "Printers", controller: "inventories", equipment: "Printer" %></li>
+        <li><%= link_to "Phone", controller: "inventories", equipment: "Phone" %></li>
+        <li><%= link_to "Mobile Device", controller: "inventories", equipment: "Mobile Device" %></li>
+      </ul>
+    </li>
+    <li role="presentation" class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Status<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><%= link_to "All", inventories_path %></li>
+        <li><%= link_to "In Use", controller: "inventories", status: "In Use" %></li>
+        <li><%= link_to "Spare", controller: "inventories", status: "Spare" %></li>
+        <li><%= link_to "In Repair", controller: "inventories", status: "In Repair" %></li>
+        <li><%= link_to "Disposed", controller: "inventories", status: "Disposed" %></li>
+        <li><%= link_to "Lost", controller: "inventories", status: "Lost" %></li>
+        <li><%= link_to "Stolen", controller: "inventories", status: "Stolen" %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
 </div>
 
 <div class="assets">

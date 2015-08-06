@@ -58,6 +58,22 @@ h1 {
   background-color: #ADC5DE;
 }
 
+//######### Show Navigation ###########
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, {
+    background-color: #fff;
+    color: #000;
+}
+
+.nav-pills>li.active>a:hover {
+  background-color: #dedede;
+  color: #000;
+}
+
+.nav-pills>ul {
+  padding-left: 0;
+}
+
 //######### Contracts ###########
 
 

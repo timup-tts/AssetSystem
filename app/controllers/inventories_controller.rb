@@ -41,8 +41,7 @@ class InventoriesController < ApplicationController
   end
 
 	def index
-    @inventory = Inventory.all
-    @inventory = Inventory.paginate(page: params[:page], per_page: 3)
+    @inventory = Inventory.by_equipment(params[:equipment]).by_status(params[:status]).paginate(page: params[:page], per_page: 3)
 	end
 
   private

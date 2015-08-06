@@ -1,6 +1,7 @@
 <%= form_for @inventory do |f| %>
         <div class="row">
           <div class="form-group col-sm-4">
+
         <% if @inventory.errors.any? %>
         <div id="error_explanation">
           <h2>
@@ -28,7 +29,7 @@
         <%= f.text_field :service_tag, class: 'form-control' %>
 
         <%= f.label "Equipment Type" %><br>
-        <%= f.select :equipment, ['Laptop', 'Desktop', 'Tablet', 'Server', 'Storage', 'Switch', 'Router', 'Wireless AP'], class: 'form-control' %><br>
+        <%= f.select :equipment, ['Laptop', 'Desktop', 'Phone', 'Mobile Device' 'Server', 'Switch', 'Router', 'Wireless AP'], class: 'form-control' %><br>
 
     </div>
 

@@ -12,6 +12,10 @@
             </div>
             <div class="col-xs-9 text-right">
               <div class="large-number"><%= @ticket.all.count %></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 text-right">
               <span>Total Tickets</span>
             </div>
           </div>
@@ -32,7 +36,11 @@
             </div>
             <div class="col-xs-9 text-right">
               <div class="large-number"><%= @ticket.where(severity: "High").count %></div>
-              <span>High Severity</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 text-right">
+              <span>High Severity Tickets</span>
             </div>
           </div>
         </div>
@@ -53,12 +61,16 @@
             </div>
             <div class="col-xs-9 text-right">
               <div class="large-number"><%= @inventory.where(status: "In Repair").count %></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 text-right">
               <span>Assets In Repair</span>
             </div>
           </div>
         </div>
         <div class="panel-footer">
-          <%= link_to "View Details", tickets_path %>
+          <%= link_to "View Details", controller: "inventories", status: "In Repair" %>
         </div>
       </div>
     </div>
@@ -72,13 +84,17 @@
               <i class="fa fa-pencil-square-o fa-4x"></i>
             </div>
             <div class="col-xs-9 text-right">
-              <div class="large-number"><%= @contract.all.count %></div>
-              <span>Contracts Expiring</span>
+              <div class="large-number"><%= @contract.where("end_date < ?", (Date.today + 60)).count %></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 text-right">
+              <span>Contracts Expiring Soon</span>
             </div>
           </div>
         </div>
         <div class="panel-footer">
-          <%= link_to "View Details", tickets_path %>
+          <%= link_to "View Details", contracts_path %>
         </div>
       </div>
     </div>
@@ -108,15 +124,6 @@
       <%= pie_chart @contract.group(:contract_type).count %>
     </div>
 
-  </div>
-
-  <div class="row">
-    <div class="col-sm-4">
-      <h5>Contracts Expiring Soon</h5>
-      <ul>
-        <li>Expiring within 60 days: </li>
-      </ul>
-    </div>
   </div>
 
 </div>
