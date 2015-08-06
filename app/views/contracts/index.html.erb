@@ -10,7 +10,8 @@
     <div class="contracts">
 
     <h1>All Contracts:</h1>
-      <table>
+      <table id="show-table" class="tablesorter">
+        <thead>
         <tr>
           <th>Name</th>
           <th>Agreement Number</th>
@@ -20,7 +21,9 @@
           <th>Edit</edit>
           <th>Remove</th>
         </tr>
+      </thead>
 
+      <tbody>
         <% @contracts.each do |contract| %>
           <tr>
             <td><%= link_to contract.contract_title, contract_path(contract) %></td>
@@ -36,6 +39,8 @@
                               data: { confirm: 'Are you sure?' } %></td>
           </tr>
             <% end %>
+          </tbody>
+
         </table>
 
       </div>

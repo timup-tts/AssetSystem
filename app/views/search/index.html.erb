@@ -1,14 +1,50 @@
-<ul class='results'>
+
+
+<div class="row">
+<div class="col-sm-12">
   <% if @results.blank? %>
-    <li><i>No Results</i></li>
+    <li><h1>No Results</h1></li>
   <% else %>
+
   <h1>Search Results</h1>
-    <% @results.each do |result| %>
-    <ul>
-      <li>
-        <%= link_to result.try(:name), inventory_path(result) %>
-      </li>
-    <ul>
+
+<table id="show-table" class="tablesorter">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Model</th>
+      <th>Serial</th>
+      <th>Owner</th>
+      <th>Status</th>
+      <th>Edit</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @results.each do |result| %>
+      <tr>
+        <td><%= link_to result.try(:name), inventory_path(result) %></td>
+        <td><%= result.equipment %></td>
+        <td><%= result.model %></td>
+        <td><%= result.serial %></td>
+        <td><%= result.owner %></td>
+        <td><%= result.status %></td>
+        <div class="edit-icon">
+          <td><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_inventory_path(result) %></td>
+        </div>
+        <div class="remove-icon">
+          <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, inventory_path(result),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+        </div>
+      </tr>
+
+      <% end %>
+    </tbody>
+
+    </table>
     <% end %>
-  <% end %>
-</ul>
+</div>
+</div>

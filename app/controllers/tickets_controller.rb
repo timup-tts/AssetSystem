@@ -49,6 +49,7 @@ class TicketsController < ApplicationController
       params.require(:ticket).permit(
       :contact,
       :severity,
+      :assigned,
       :summary,
       :description,
       :status,

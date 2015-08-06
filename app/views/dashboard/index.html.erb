@@ -3,6 +3,92 @@
 <div class="dashboard">
   <div class="row">
 
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-life-ring fa-4x"></i>
+            </div>
+            <div class="col-xs-9 text-right">
+              <div class="large-number"><%= @ticket.all.count %></div>
+              <span>Total Tickets</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <%= link_to "View Details", tickets_path %>
+        </div>
+      </div>
+    </div>
+
+    <div class="red-panel">
+    <div class="col-md-3">
+        <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-life-ring fa-4x"></i>
+            </div>
+            <div class="col-xs-9 text-right">
+              <div class="large-number"><%= @ticket.where(severity: "High").count %></div>
+              <span>High Severity</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <%= link_to "View Details", tickets_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-desktop fa-4x"></i>
+            </div>
+            <div class="col-xs-9 text-right">
+              <div class="large-number"><%= @inventory.where(status: "In Repair").count %></div>
+              <span>Assets In Repair</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <%= link_to "View Details", tickets_path %>
+        </div>
+      </div>
+    </div>
+
+    <div class="red-panel">
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-pencil-square-o fa-4x"></i>
+            </div>
+            <div class="col-xs-9 text-right">
+              <div class="large-number"><%= @contract.all.count %></div>
+              <span>Contracts Expiring</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <%= link_to "View Details", tickets_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+
     <div class="col-lg-5">
         <h5>Total Assets</h5>
         <%= pie_chart @inventory.group(:equipment).count %>

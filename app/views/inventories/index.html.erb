@@ -4,48 +4,50 @@
   </div>
 </div>
 
-
 <div class="assets">
   <div class="row">
     <div class="col-sm-12">
 
-      <h1>All Assets</h1>
+      <h1>All Assets:</h1>
 
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Model</th>
-          <th>Serial</th>
-          <th>Owner</th>
-          <th>Status</th>
-          <th>Edit</th>
-          <th>Remove</th>
-        <tr>
+      <table id="show-table" class="tablesorter">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Model</th>
+            <th>Serial</th>
+            <th>Owner</th>
+            <th>Status</th>
+            <th>Edit</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
 
-      <% @inventory.each do |inventory| %>
-
-        <tr>
-          <td><%= link_to inventory.name, inventory_path(inventory) %></td>
-          <td><%= inventory.equipment %></td>
-          <td><%= inventory.model %></td>
-          <td><%= inventory.serial %></td>
-          <td><%= inventory.owner %></td>
-          <td><%= inventory.status %></td>
-          <div class="edit-icon">
-            <td><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_inventory_path(inventory) %></td>
-          </div>
-          <div class="remove-icon">
-            <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, inventory_path(inventory),
+        <tbody>
+            <% @inventory.each do |inventory| %>
+            <tr>
+              <td><%= link_to inventory.name, inventory_path(inventory) %></td>
+              <td><%= inventory.equipment %></td>
+              <td><%= inventory.model %></td>
+              <td><%= inventory.serial %></td>
+              <td><%= inventory.owner %></td>
+              <td><%= inventory.status %></td>
+              <div class="edit-icon">
+                <td><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_inventory_path(inventory) %></td>
+              </div>
+              <div class="remove-icon">
+                <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, inventory_path(inventory),
                       method: :delete,
                       data: { confirm: 'Are you sure?' } %></td>
-          </div>
-        </tr>
+              </div>
+            </tr>
 
-        <% end %>
+            <% end %>
+          </tbody>
 
-      </table>
+          </table>
 
+        </div>
+      </div>
     </div>
-  </div>
-</div>

@@ -6,13 +6,18 @@
 
 h1 {
   font-size: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 .remove-icon td {
   text-align: center;
 }
 
-//######### Show PAges ###########
+.large-number {
+  font-size: 3em;
+}
+
+//######### Show Pages ###########
 
 .record-show {
   margin-bottom: 2em;
@@ -35,32 +40,44 @@ h1 {
   padding-right: 15px;
 }
 
-//######### Contracts ###########
-
-.contracts td, th {
-  padding: 8px 15px;
+#show-table td {
+  padding: 4px 8px;
   border: solid 1px #dedede;
 }
+
+#show-table th {
+  padding: 4px 18px 4px 6px;
+  border: solid 1px #dedede;
+}
+
+//######### Contracts ###########
+
 
 //########## Assets ############
 
-.assets td, th {
-  padding: 8px 15px;
-  border: solid 1px #dedede;
-}
 
 //######### Tickets ##########
 
-.tickets td, th {
-  padding: 8px 15px;
-  border: solid 1px #dedede;
-}
+
 
 //######### Dashboard ############
 
 .dashboard ul {
   list-style: none;
   padding-left: 0;
+}
+
+.panel-default {
+  background-color: #3071AB;
+  color: #fff;
+}
+
+.red-panel .panel-default {
+  background-color: #D9311E;
+}
+
+.green-panel .panel-default {
+  background-color: #0DB53A;
 }
 
 //######## Forms ############
@@ -79,4 +96,40 @@ h1 {
 
 .new_contract input[type="submit"], .edit_contract input[type="submit"] {
   margin-top: 10px;
+}
+
+.new_ticket label, .edit_ticket label {
+  padding: 10px 0px;
+}
+
+//########## Tablesorter #########
+
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	background-color: #ccc;
+}
+
+table.tablesorter thead tr .header {
+	background-image: url(asset_path('bg.gif'));
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+
+// table.tablesorter tbody td {
+// 	color: #3D3D3D;
+// }
+table.tablesorter tbody tr.odd td {
+	background-color:#F0F0F6;
+}
+
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(asset_path('asc.gif'));
+}
+
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(asset_path('desc.gif'));
+}
+
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: #4296DB;
 }
