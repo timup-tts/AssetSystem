@@ -45,7 +45,7 @@ class ContractsController < ApplicationController
   end
 
   def index
-    @contracts = Contract.all
+    @contracts = Contract.by_type(params[:contract_type]).by_status(params[:status]).paginate(page: params[:page], per_page: 3)
   end
 
 private

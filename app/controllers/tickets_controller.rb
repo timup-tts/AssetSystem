@@ -41,7 +41,7 @@ class TicketsController < ApplicationController
   end
 
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.by_severity(params[:severity]).by_status(params[:status]).paginate(page: params[:page], per_page: 3)
   end
 
   private

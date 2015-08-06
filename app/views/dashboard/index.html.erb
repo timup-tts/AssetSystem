@@ -111,13 +111,18 @@
     </div>
 
     <div class="col-lg-6">
-      <h5>Equipment By Status</h5>
-      <%= column_chart @inventory.group(:status).count %>
+      <h5>Tickets By Status</h5>
+      <%= column_chart @ticket.group(:status).count %>
     </div>
 
   </div>
 
   <div class="row">
+
+    <div class="col-lg-6">
+      <h5>Equipment By Status</h5>
+      <%= column_chart @inventory.group(:status).count %>
+    </div>
 
     <div class="col-sm-5">
       <h5>Contracts By Type</h5>
