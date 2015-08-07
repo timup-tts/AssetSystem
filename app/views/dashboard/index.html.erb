@@ -105,7 +105,7 @@
 
   <div class="row">
 
-    <div class="col-lg-5">
+    <div class="col-lg-6">
         <h5>Total Assets</h5>
         <%= pie_chart @inventory.group(:equipment).count %>
     </div>
@@ -124,7 +124,7 @@
       <%= column_chart @inventory.group(:status).count %>
     </div>
 
-    <div class="col-lg-5">
+    <div class="col-lg-6">
       <h5>Contracts By Type</h5>
       <%= pie_chart @contract.group(:contract_type).count %>
     </div>
