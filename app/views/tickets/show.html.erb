@@ -12,17 +12,12 @@
         <li><strong>Summary:</strong> <%= @ticket.summary %></li>
         <li><strong>Description:</strong> <%= @ticket.description %></li>
         <li><strong>Attachment:</strong> <%= link_to @ticket.attachment, @ticket.attachment.url %></li>
+        <li><strong><%= link_to 'Edit', edit_ticket_path %> | <%= link_to 'Close', ticket_path, method: :delete,
+                  data: { confirm: 'Are you sure?' } %></li></strong>
       </ul>
     </div>
   </div>
 
 </div>
 
-<div class="show-buttons">
-
-    <span><%= link_to 'Edit', edit_ticket_path, class: "btn btn-primary btn-sm" %></span>
-
-    <span><%= link_to 'Delete', ticket_path,
-              method: :delete,
-              data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %></span>
-</div>
+<%= render 'layouts/commentform' %>

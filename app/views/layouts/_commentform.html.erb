@@ -1,0 +1,15 @@
+<%= form_for([@ticket, @ticket.comments.build]) do |f| %>
+  <div class="row">
+       <div class="form-group col-sm-6">
+         <%= f.label "Log Entry" %>
+         <%= f.text_area :body, class: 'form-control' %>
+
+         <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
+       </div>
+     </div>
+<% end %>
+
+<p>Work Log:</p>
+<% @ticket.comments.each do |comment| %>
+<p><%= comment.body %></p>
+<% end %>

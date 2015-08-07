@@ -2,15 +2,13 @@ Rails.application.routes.draw do
 
   root 'dashboard#index'
 
-  resources :inventories do
-    collection do
-      get 'allassets'
-    end
-  end
+  resources :inventories
 
   resources :contracts
 
-  resources :tickets
+  resources :tickets do
+    resources :comments
+  end
 
   get 'dashboard' => 'dashboard#index', as: :dashboard
 

@@ -126,6 +126,14 @@ h1 {
   padding: 10px 0px;
 }
 
+.new_comment label {
+  padding: 10px 0px;
+}
+
+.new_comment input[type="submit"] {
+  margin-top: 10px;
+}
+
 //########## Tablesorter #########
 
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {

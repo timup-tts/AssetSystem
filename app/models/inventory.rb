@@ -1,5 +1,4 @@
 class Inventory < ActiveRecord::Base
-  has_many :contracts
 
   # scope :by_name, -> name { where(name: name) if status.present? }
 

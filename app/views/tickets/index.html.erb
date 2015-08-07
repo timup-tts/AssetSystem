@@ -29,7 +29,7 @@
 <div class="row">
   <div class="col-sm-12">
 
-    <div class="tickets">
+
 
       <h1>All Tickets:</h1>
       <div class="table-responsive">
@@ -42,7 +42,7 @@
           <th>Summary</th>
           <th>Status</th>
           <th>Edit</edit>
-          <th>Remove</th>
+          <th>Close</th>
         </tr>
       </thead>
 
@@ -67,6 +67,7 @@
       </table>
     </div>
 
-        </div>
+    <%= will_paginate @contract, renderer: BootstrapPagination::Rails %>
+    
       </div>
     </div>
