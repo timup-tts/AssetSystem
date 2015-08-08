@@ -1,0 +1,41 @@
+<div class="signup-form">
+
+<%= form_for @user do |f| %>
+<div class="row">
+  <div class="form-group col-sm-3 col-sm-offset-4">
+    <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %>
+        prohibited this article from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <h1>Sign Up:</h1>
+
+    <%= f.label "First Name" %>
+    <%= f.text_field :first_name, class: 'form-control' %>
+
+    <%= f.label "Last Name" %>
+    <%= f.text_field :last_name, class: 'form-control' %>
+
+    <%= f.label "Email" %>
+    <%= f.email_field :email, class: 'form-control' %>
+
+    <%= f.label "Password" %>
+    <%= f.password_field :password, class: 'form-control' %>
+
+    <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
+
+  </div>
+</div>
+
+<% end %>
+
+</div>

@@ -110,36 +110,16 @@ h1 {
 
 //######## Forms ############
 
-.new_inventory label, .edit_inventory label {
-  padding: 10px 0px;
-}
-
-.new_inventory input[type="submit"], .edit_inventory input[type="submit"]  {
+input[type="submit"] {
   margin-top: 10px;
 }
 
-.new_contract label, .edit_contract label {
+label {
   padding: 10px 0px;
 }
 
-.new_contract input[type="submit"], .edit_contract input[type="submit"] {
-  margin-top: 10px;
-}
-
-.new_ticket label, .edit_ticket label {
-  padding: 10px 0px;
-}
-
-.new_ticket input[type="submit"], .edit_ticket input[type="submit"] {
-  margin-top: 10px;
-}
-
-.new_comment label {
-  padding: 10px 0px;
-}
-
-.new_comment input[type="submit"] {
-  margin-top: 10px;
+.login-form {
+  margin-top: 10em;
 }
 
 //########## Tablesorter #########

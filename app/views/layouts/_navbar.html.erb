@@ -11,22 +11,23 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-
-                <li class="dropdown">
+                <% if current_user %>
+                    <li><%= current_user.email %></li>
+                    <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
+                        <li><%= link_to '<i class="fa fa-sign-out fa-fw"></i> Logout'.html_safe, logout_path, method: "delete" %></li>
                     </ul>
-                    <!-- /.dropdown-user -->
-                </li>
+                </li><!-- /.dropdown-user -->
+                <% else %>
+                        <li><%= link_to "Login", 'login' %></li>
+                        <li><%= link_to "Signup", 'signup' %></li>
+                <% end %>
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
