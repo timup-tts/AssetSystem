@@ -1,6 +1,6 @@
 <%= form_for @ticket do |f| %>
 <div class="row">
-  <div class="form-group col-sm-6">
+  <div class="form-group col-md-6">
     <% if @ticket.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -18,27 +18,36 @@
     <%= f.label "Contact" %>
     <%= f.text_field :contact, class: 'form-control' %>
 
-    <%= f.label :severity %><br>
-    <%= f.select :severity, ['Low','Medium','High'], class: 'form-control' %><br>
-
-    <%= f.label :assigned %><br>
-    <%= f.select :assigned, ['George Anderson','Stefani Irma','Peyton Conor'], class: 'form-control' %><br>
-
-    <%= f.label :status %><br>
-    <%= f.select :status, ['Working','Pending On Customer','Pending on Vendor','On Hold','In Queue'], class: 'form-control' %><br>
+    <%= f.label :severity %>
+    <%= f.select(:severity, ['Low','Medium','High'], {}, { class: 'form-control' }) %>
 
     <%= f.label "Summary" %>
     <%= f.text_field :summary, class: 'form-control' %>
 
-    <%= f.label :description %>
-    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+
+    <div class="col-md-6">
+
+    <%= f.label :assigned %>
+    <%= f.select(:assigned, ['George Anderson','Stefani Irma','Peyton Conor'], {}, { class: 'form-control' }) %>
+
+    <%= f.label :status %>
+    <%= f.select(:status, ['Working','Pending On Customer','Pending on Vendor','On Hold','In Queue'], {}, { class: 'form-control' }) %>
 
     <%= f.label "Attachment" %>
-    <%= f.file_field :attachment, class: 'form-control' %><br>
+    <%= f.file_field :attachment %><br>
     <% if @ticket.attachment.file? %>
-    <p>Attached:</p>
-    <p><%= link_to @ticket.attachment_file_name, @ticket.attachment.url %></p>
+      <p>Attached:</p>
+      <p><%= link_to @ticket.attachment_file_name, @ticket.attachment.url %></p>
     <% end %>
+
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-sm-8">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
 
     <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
 

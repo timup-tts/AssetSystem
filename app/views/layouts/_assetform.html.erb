@@ -28,8 +28,8 @@
         <%= f.label "Service Tag" %>
         <%= f.text_field :service_tag, class: 'form-control' %>
 
-        <%= f.label "Equipment Type" %><br>
-        <%= f.select :equipment, ['Laptop', 'Desktop', 'Phone', 'Mobile Device' 'Server', 'Switch', 'Router', 'Wireless AP'], class: 'form-control' %><br>
+        <%= f.label "Equipment Type" %>
+        <%= f.select(:equipment, ['Laptop', 'Desktop', 'Phone', 'Mobile Device' 'Server', 'Switch', 'Router', 'Wireless AP'], {}, { class: 'form-control' }) %>
 
     </div>
 
@@ -47,8 +47,8 @@
         <%= f.label :department %>
         <%= f.text_field :department, class: 'form-control' %>
 
-        <%= f.label :status %><br>
-        <%= f.select :status, ['In Use', 'Spare', 'Disposed', 'In Repair', 'Lost', 'Stolen'], class: 'form-control' %>
+        <%= f.label :status %>
+        <%= f.select(:status, ['In Use', 'Spare', 'Disposed', 'In Repair', 'Lost', 'Stolen'], {}, { class: 'form-control' }) %>
 
       </div>
 
@@ -60,8 +60,8 @@
           <%= f.label "IP Address" %>
           <%= f.text_field :ip_address, class: 'form-control' %>
 
-          <%= f.label "Operating System" %><br>
-          <%= f.select :operating_system, ['Windows XP','Windows 7','Windows 8/8.1','Windows 10','Windows 2003','Windows 2008','Windows 2012'], class: 'form-control' %>
+          <%= f.label "Operating System" %>
+          <%= f.select(:operating_system, ['Windows XP','Windows 7','Windows 8/8.1','Windows 10','Windows 2003','Windows 2008','Windows 2012'], {}, { class: 'form-control'}) %>
 
       </div>
 

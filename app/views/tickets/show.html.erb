@@ -4,17 +4,28 @@
   <h1>Ticket Details</h1>
 
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-md-6 col-sm-12">
       <ul>
         <li><strong>Contact:</strong> <%= @ticket.contact %></li>
         <li><strong>Severity:</strong> <%= @ticket.severity %></li>
         <li><strong>Assigned:</strong> <%= @ticket.assigned %></li>
         <li><strong>Summary:</strong> <%= @ticket.summary %></li>
         <li><strong>Description:</strong> <%= @ticket.description %></li>
-        <li><strong>Attachment:</strong> <%= link_to @ticket.attachment, @ticket.attachment.url %></li>
+
         <li><strong><%= link_to 'Edit', edit_ticket_path %> | <%= link_to 'Close', ticket_path, method: :delete,
                   data: { confirm: 'Are you sure?' } %></li></strong>
       </ul>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <%= form_for @ticket do |f| %>
+        <%= f.label "Attachment:" %>
+        <%= f.file_field :attachment %><br>
+        <% if @ticket.attachment.file? %>
+          <p>Attached:</p>
+          <p><%= link_to @ticket.attachment_file_name, @ticket.attachment.url %></p>
+        <% end %>
+        <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
+      <% end %>
     </div>
   </div>
 

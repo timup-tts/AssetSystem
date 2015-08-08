@@ -104,6 +104,10 @@ h1 {
   background-color: #0DB53A;
 }
 
+.dashboard-charts {
+  margin-bottom: 5em;
+}
+
 //######## Forms ############
 
 .new_inventory label, .edit_inventory label {
@@ -124,6 +128,10 @@ h1 {
 
 .new_ticket label, .edit_ticket label {
   padding: 10px 0px;
+}
+
+.new_ticket input[type="submit"], .edit_ticket input[type="submit"] {
+  margin-top: 10px;
 }
 
 .new_comment label {
@@ -164,4 +172,18 @@ table.tablesorter thead tr .headerSortDown {
 
 table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
 background-color: #4296DB;
+}
+
+//####### Dropdown Buttons ############
+
+.caret-up {
+    width: 0;
+    height: 0;
+    border-left: 4px solid rgba(0, 0, 0, 0);
+    border-right: 4px solid rgba(0, 0, 0, 0);
+    border-bottom: 4px solid;
+
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
 }
