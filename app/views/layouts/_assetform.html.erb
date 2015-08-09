@@ -1,80 +1,80 @@
 <%= form_for @inventory do |f| %>
-        <div class="row">
-          <div class="form-group col-sm-4">
+<div class="row">
+  <div class="form-group col-sm-4">
 
-        <% if @inventory.errors.any? %>
-        <div id="error_explanation">
-          <h2>
-            <%= pluralize(@inventory.errors.count, "error") %> prohibited
-            this article from being saved:
-          </h2>
-          <ul>
-            <% @inventory.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-        <%= f.label "Asset Name" %>
-        <%= f.text_field :name, class: 'form-control' %>
-
-        <%= f.label :barcode %>
-        <%= f.text_field :barcode, class: 'form-control' %>
-
-        <%= f.label :serial %>
-        <%= f.text_field :serial, class: 'form-control' %>
-
-        <%= f.label "Service Tag" %>
-        <%= f.text_field :service_tag, class: 'form-control' %>
-
-        <%= f.label "Equipment Type" %>
-        <%= f.select(:equipment, ['Laptop', 'Desktop', 'Phone', 'Mobile Device' 'Server', 'Switch', 'Router', 'Wireless AP'], {}, { class: 'form-control' }) %>
-
+    <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@inventory.errors.count, "error") %>
+        prohibited this article from being saved:
+      </h2>
+      <ul>
+        <% @inventory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
+    <% end %>
 
-    <div class="form-group col-sm-4">
+    <%= f.label "Asset Name" %>
+    <%= f.text_field :name, class: 'form-control' %>
 
-        <%= f.label :manufacturer %>
-        <%= f.text_field :manufacturer, class: 'form-control' %>
+    <%= f.label :barcode %>
+    <%= f.text_field :barcode, class: 'form-control' %>
 
-        <%= f.label :model %>
-        <%= f.text_field :model, class: 'form-control' %>
+    <%= f.label :serial %>
+    <%= f.text_field :serial, class: 'form-control' %>
 
-        <%= f.label :owner %>
-        <%= f.text_field :owner, class: 'form-control' %>
+    <%= f.label "Service Tag" %>
+    <%= f.text_field :service_tag, class: 'form-control' %>
 
-        <%= f.label :department %>
-        <%= f.text_field :department, class: 'form-control' %>
+    <%= f.label "Equipment Type" %>
+    <%= f.select(:equipment, ['Laptop', 'Desktop', 'Phone', 'Mobile Device' 'Server', 'Switch', 'Router', 'Wireless AP'], {}, { class: 'form-control' }) %>
 
-        <%= f.label :status %>
-        <%= f.select(:status, ['In Use', 'Spare', 'Disposed', 'In Repair', 'Lost', 'Stolen'], {}, { class: 'form-control' }) %>
+  </div>
 
-      </div>
+  <div class="form-group col-sm-4">
 
-      <div class="form-group col-sm-4">
+    <%= f.label :manufacturer %>
+    <%= f.text_field :manufacturer, class: 'form-control' %>
 
-          <%= f.label "Purchase Date" %>
-          <%= f.date_field :purchasedate, class: 'form-control' %>
+    <%= f.label :model %>
+    <%= f.text_field :model, class: 'form-control' %>
 
-          <%= f.label "IP Address" %>
-          <%= f.text_field :ip_address, class: 'form-control' %>
+    <%= f.label :owner %>
+    <%= f.text_field :owner, class: 'form-control' %>
 
-          <%= f.label "Operating System" %>
-          <%= f.select(:operating_system, ['Windows XP','Windows 7','Windows 8/8.1','Windows 10','Windows 2003','Windows 2008','Windows 2012'], {}, { class: 'form-control'}) %>
+    <%= f.label :department %>
+    <%= f.text_field :department, class: 'form-control' %>
 
-      </div>
+    <%= f.label :status %>
+    <%= f.select(:status, ['In Use', 'Spare', 'Disposed', 'In Repair', 'Lost', 'Stolen'], {}, { class: 'form-control' }) %>
 
-    </div>
+  </div>
 
-      <div class="row">
-          <div class="form-group col-sm-6">
-            <%= f.label :comments %>
-            <%= f.text_area :comments, class: 'form-control' %>
+  <div class="form-group col-sm-4">
 
-            <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
+    <%= f.label "Purchase Date" %>
+    <%= f.date_field :purchasedate, class: 'form-control' %>
 
-          </div>
-      </div>
+    <%= f.label "IP Address" %>
+    <%= f.text_field :ip_address, class: 'form-control' %>
+
+    <%= f.label "Operating System" %>
+    <%= f.select(:operating_system, ['Windows XP','Windows 7','Windows 8/8.1','Windows 10','Windows 2003','Windows 2008','Windows 2012'], {}, { class: 'form-control'}) %>
+
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="form-group col-sm-6">
+    <%= f.label :comments %>
+    <%= f.text_area :comments, class: 'form-control' %>
+
+    <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
+
+  </div>
+</div>
 
 <% end %>

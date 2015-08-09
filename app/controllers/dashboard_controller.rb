@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-  before_action :require_user, only: [:index, :show]
+  before_action :logged_in_user
 
   def index
     @inventory = Inventory.all

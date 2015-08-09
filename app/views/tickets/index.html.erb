@@ -1,73 +1,76 @@
 <div class="row">
   <div class="col-sm-12">
     <ul class="nav nav-pills">
-    <li role="presenation"> <%= link_to 'Add New Ticket', new_ticket_path %></li>
-    <li role="presentation" class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Severity<b class="caret"></b></a>
-      <ul class="dropdown-menu">
-        <li><%= link_to "All", tickets_path %></li>
-        <li><%= link_to "High", controller: "tickets", severity: "High" %></li>
-        <li><%= link_to "Medium", controller: "tickets", severity: "Medium" %></li>
-        <li><%= link_to "Low", controller: "tickets", severity: "Low" %></li>
-      </ul>
-    </li>
-    <li role="presentation" class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Status<b class="caret"></b></a>
-      <ul class="dropdown-menu">
-        <li><%= link_to "All", tickets_path %></li>
-        <li><%= link_to "Working", controller: "tickets", status: "Working" %></li>
-        <li><%= link_to "Pending On Customer", controller: "tickets", status: "Pending On Customer" %></li>
-        <li><%= link_to "Pending On Vendor", controller: "tickets", status: "Pending On Vendor" %></li>
-        <li><%= link_to "On Hold", controller: "tickets", status: "On Hold" %></li>
-        <li><%= link_to "In Queue", controller: "tickets", status: "In Queue" %></li>
-      </ul>
-    </li>
-  </ul>
-</div>
+      <li role="presenation">
+        <%= link_to 'Add New Ticket', new_ticket_path %></li>
+      <li class="dropdown" role="presentation">
+        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Severity
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "All", tickets_path %></li>
+          <li><%= link_to "High", controller: "tickets", severity: "High" %></li>
+          <li><%= link_to "Medium", controller: "tickets", severity: "Medium" %></li>
+          <li><%= link_to "Low", controller: "tickets", severity: "Low" %></li>
+        </ul>
+      </li>
+      <li class="dropdown" role="presentation">
+        <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Status
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "All", tickets_path %></li>
+          <li><%= link_to "Working", controller: "tickets", status: "Working" %></li>
+          <li><%= link_to "Pending On Customer", controller: "tickets", status: "Pending On Customer" %></li>
+          <li><%= link_to "Pending On Vendor", controller: "tickets", status: "Pending On Vendor" %></li>
+          <li><%= link_to "On Hold", controller: "tickets", status: "On Hold" %></li>
+          <li><%= link_to "In Queue", controller: "tickets", status: "In Queue" %></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="row">
   <div class="col-sm-12">
 
-
-
-      <h1>All Tickets:</h1>
-      <div class="table-responsive">
-      <table id="show-table" class="tablesorter table table-hover">
+    <h1>All Tickets:</h1>
+    <div class="table-responsive">
+      <table class="tablesorter table table-hover" id="show-table">
         <thead>
-        <tr>
-          <th>Contact</th>
-          <th>Severity</th>
-          <th>Assigned</th>
-          <th>Summary</th>
-          <th>Status</th>
-          <th>Edit</edit>
-          <th>Close</th>
-        </tr>
-      </thead>
+          <tr>
+            <th>Contact</th>
+            <th>Severity</th>
+            <th>Assigned</th>
+            <th>Summary</th>
+            <th>Status</th>
+            <th>Edit</edit>
+            <th>Close</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <% @tickets.each do |ticket| %>
-        <tr>
-          <td><%= link_to ticket.contact, ticket_path(ticket) %></td>
-          <td><%= ticket.severity %></td>
-          <td><%= ticket.assigned %></td>
-          <td><%= ticket.summary %></td>
-          <td><%= ticket.status %></td>
-          <div class="edit-icon">
-            <td><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_ticket_path(ticket) %></td>
-          </div>
-          <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, ticket_path(ticket),
+        <tbody>
+          <% @tickets.each do |ticket| %>
+          <tr>
+            <td><%= link_to ticket.contact, ticket_path(ticket) %></td>
+            <td><%= ticket.severity %></td>
+            <td><%= ticket.assigned %></td>
+            <td><%= ticket.summary %></td>
+            <td><%= ticket.status %></td>
+            <div class="edit-icon">
+              <td><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_ticket_path(ticket) %></td>
+            </div>
+            <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, ticket_path(ticket),
                               method: :delete,
                               data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-        <% end %>
-      </tbody>
+          </tr>
+          <% end %>
+        </tbody>
 
       </table>
     </div>
 
     <%= will_paginate @contract, renderer: BootstrapPagination::Rails %>
 
-      </div>
-    </div>
+  </div>
+</div>

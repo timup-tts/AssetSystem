@@ -1,4 +1,6 @@
 class ContractsController < ApplicationController
+  before_action :logged_in_user
+
   def new
 		@contract = Contract.new
   end

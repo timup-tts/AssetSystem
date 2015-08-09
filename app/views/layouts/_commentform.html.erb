@@ -11,5 +11,8 @@
 
 <p>Work Log:</p>
 <% @ticket.comments.each do |comment| %>
+<% if comment.user != nil %>
+<p>Posted on <%= comment.created_at.strftime('%b %e, %l:%M %p') %> by: <%= comment.user.first_name %> <%= comment.user.last_name %></p>
+<% end %>
 <p><%= comment.body %></p>
 <% end %>

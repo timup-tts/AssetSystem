@@ -1,6 +1,6 @@
 module ApplicationHelper
   def full_title(page_title = '')
-    base_title = "Asset Inventory"
+    base_title = "AssetWire"
     if page_title.empty?
       base_title
     else
@@ -9,8 +9,8 @@ module ApplicationHelper
   end
 
   def available_at
-  return super.to_datetime if super.respond_to?(:to_datetime)
-  DateTime.parse(super)
-end
+    return super.to_datetime if super.respond_to?(:to_datetime)
+    DateTime.parse(super)
+  end
 
 end

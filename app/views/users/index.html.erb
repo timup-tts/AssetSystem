@@ -1,0 +1,44 @@
+<% provide(:title, 'All users') %>
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <%= link_to "Add New User", new_user_path, class: "btn btn-primary btn-sm" %>
+
+      <h1>All Users:</h1>
+      <div class="table-responsive">
+        <table class="tablesorter table table-hover" id="show-table">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Edit</edit>
+              <th>Delete</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @users.each do |user| %>
+            <tr>
+              <td><%= user.first_name %></td>
+              <td><%= user.last_name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.role %></td>
+              <div class="edit-icon">
+                <td><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_user_path(user) %></td>
+              </div>
+              <td><%= link_to '<i class="fa fa-times"></i>'.html_safe, user_path(user),
+                                method: :delete,
+                                data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+
+        </table>
+      </div>
+
+
+    </div>
+  </div>

@@ -1,4 +1,6 @@
 class SearchController < ApplicationController
+  before_action :logged_in_user
+
   def index
     if jump = jump_target
       redirect_to jump

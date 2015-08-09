@@ -6,27 +6,30 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <%= link_to "AssetRails", root_path, class: "navbar-brand" %>
+                <%= link_to "AssetWire", root_path, class: "navbar-brand" %>
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                <% if current_user %>
+                <% if logged_in? %>
                     <li><%= current_user.email %></li>
                     <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
+                        <li><%= link_to '<i class="fa fa-user fa-fw"></i> User Profile'.html_safe, edit_user_path(current_user) %></li>
+
+                        <% if current_user && current_user.admin? %>
+                                <li><%= link_to '<i class="fa fa-cogs"></i> Admin Panel'.html_safe, 'users' %></li>
+                        <% end %>
+
                         <li class="divider"></li>
                         <li><%= link_to '<i class="fa fa-sign-out fa-fw"></i> Logout'.html_safe, logout_path, method: "delete" %></li>
                     </ul>
                 </li><!-- /.dropdown-user -->
                 <% else %>
                         <li><%= link_to "Login", 'login' %></li>
-                        <li><%= link_to "Signup", 'signup' %></li>
                 <% end %>
                 <!-- /.dropdown -->
             </ul>

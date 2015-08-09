@@ -1,4 +1,5 @@
 class InventoriesController < ApplicationController
+  before_action :logged_in_user
 
   def new
 		@inventory = Inventory.new
