@@ -1,18 +1,22 @@
 <%= form_for([@ticket, @ticket.comments.build]) do |f| %>
-  <div class="row">
-       <div class="form-group col-sm-6">
-         <%= f.label "Log Entry" %>
-         <%= f.text_area :body, class: 'form-control' %>
+<div class="row">
+  <div class="form-group col-sm-6">
+    <%= f.label "Log Entry" %>
+    <%= f.text_area :body, class: 'form-control' %>
 
-         <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
-       </div>
-     </div>
+    <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
+  </div>
+</div>
 <% end %>
 
 <p>Work Log:</p>
 <% @ticket.comments.each do |comment| %>
 <% if comment.user != nil %>
-<p>Posted on <%= comment.created_at.strftime('%b %e, %l:%M %p') %> by: <%= comment.user.first_name %> <%= comment.user.last_name %></p>
+<p>Posted on
+  <%= comment.created_at.strftime('%b %e, %l:%M %p') %>
+  by:
+  <%= comment.user.first_name %>
+  <%= comment.user.last_name %></p>
 <% end %>
 <p><%= comment.body %></p>
 <% end %>

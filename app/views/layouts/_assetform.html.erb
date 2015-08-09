@@ -1,20 +1,6 @@
 <%= form_for @inventory do |f| %>
 <div class="row">
-  <div class="form-group col-sm-4">
-
-    <% if @inventory.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@inventory.errors.count, "error") %>
-        prohibited this article from being saved:
-      </h2>
-      <ul>
-        <% @inventory.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-    <% end %>
+  <div class="form-group col-sm-3">
 
     <%= f.label "Asset Name" %>
     <%= f.text_field :name, class: 'form-control' %>
@@ -33,7 +19,7 @@
 
   </div>
 
-  <div class="form-group col-sm-4">
+  <div class="form-group col-sm-3">
 
     <%= f.label :manufacturer %>
     <%= f.text_field :manufacturer, class: 'form-control' %>
@@ -52,7 +38,7 @@
 
   </div>
 
-  <div class="form-group col-sm-4">
+  <div class="form-group col-sm-3">
 
     <%= f.label "Purchase Date" %>
     <%= f.date_field :purchasedate, class: 'form-control' %>

@@ -105,33 +105,54 @@
 <div class="dashboard-charts">
 
   <div class="row">
-
     <div class="col-lg-6">
-        <h5>Total Assets</h5>
-        <%= pie_chart @inventory.group(:equipment).count %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h5 class="panel-title">Total Assets</h5>
+      </div>
+        <div class="panel-body">
+          <%= pie_chart @inventory.group(:equipment).count %>
+        </div>
+      </div>
     </div>
 
     <div class="col-lg-6">
-      <h5>Tickets By Status</h5>
-      <%= column_chart @ticket.group(:status).count %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h5 class="panel-title">Tickets By Status</h5>
+      </div>
+        <div class="panel-body">
+          <%= column_chart @ticket.group(:status).count %>
+        </div>
+      </div>
     </div>
 
-  </div>
+  </div> <!-- End Row -->
 
   <div class="row">
 
     <div class="col-lg-6">
-      <h5>Equipment By Status</h5>
-      <%= column_chart @inventory.group(:status).count %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h5 class="panel-title">Equipment By Status</h5>
+      </div>
+        <div class="panel-body">
+          <%= column_chart @inventory.group(:status).count %>
+        </div>
+      </div>
     </div>
 
     <div class="col-lg-6">
-      <h5>Contracts By Type</h5>
-      <%= pie_chart @contract.group(:contract_type).count %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h5 class="panel-title">Contracts By Type</h5>
+      </div>
+        <div class="panel-body">
+          <%= pie_chart @contract.group(:contract_type).count %>
+        </div>
+      </div>
     </div>
 
-  </div>
-
-</div>
+  </div> <!-- End Row -->
 
 </div>

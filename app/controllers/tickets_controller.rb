@@ -9,7 +9,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
 
     if @ticket.save
-      flash[:notice] = "Ticket successfully created."
+      flash[:success] = "Ticket successfully created."
       redirect_to @ticket
     else
       render 'new'
@@ -37,7 +37,7 @@ class TicketsController < ApplicationController
   def destroy
     @ticket = Ticket.find(params[:id])
     @ticket.destroy
-    flash[:notice] = "Ticket successfully deleted."
+    flash[:success] = "Ticket successfully deleted."
     redirect_to tickets_path
   end
 

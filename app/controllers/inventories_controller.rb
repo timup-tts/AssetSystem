@@ -9,7 +9,7 @@ class InventoriesController < ApplicationController
     @inventory = Inventory.new(inventory_params)
 
     if @inventory.save
-      flash[:notice] = "Asset successfully created."
+      flash[:success] = "Asset successfully created."
     	redirect_to @inventory
 		else
 			render 'new'
@@ -37,7 +37,7 @@ class InventoriesController < ApplicationController
   def destroy
     @inventory = Inventory.find(params[:id])
     @inventory.destroy
-    flash[:notice] = "Asset successfuly deleted."
+    flash[:success] = "Asset successfuly deleted."
     redirect_to inventories_path
   end
 
