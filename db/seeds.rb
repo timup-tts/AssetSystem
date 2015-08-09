@@ -47,3 +47,14 @@ end
   status: ['Active', 'Expired', 'Purchased'].slice(rand(0..2))
   )
 end
+
+1.times do |i|
+  User.create(
+  first_name: "Admin",
+  last_name: "User",
+  email: "admin@eric-price.net",
+  password: "P@$$word123",
+  password_confirmation: "P@$$word123",
+  role: "admin"
+  )
+end
