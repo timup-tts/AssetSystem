@@ -41,12 +41,13 @@ Rails.application.configure do
 
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
-  config.paperclip_defaults = {
-  :storage => :s3,
-  :s3_host_name => 's3-us-west-2.amazonaws.com',
-  :s3_credentials => {
-    :bucket => 'assetsystem'
-    }
-  }
+  # config.paperclip_defaults = {
+  # :storage => :s3,
+  # :url => ':s3_domain_url',
+  # :s3_host_name => 's3-us-west-2.amazonaws.com',
+  # :s3_credentials => {
+  #   :bucket => 'attachstorage'
+  #   }
+  # }
 
 end
