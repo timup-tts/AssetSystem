@@ -81,8 +81,6 @@ Rails.application.configure do
   :storage => :s3,
   :s3_credentials => {
     :bucket => 'assetsystem'
-    :access_key_id => ENV['access_key_id'],
-    :secret_access_key => ENV['secret_access_key']
     }
   }
 end
