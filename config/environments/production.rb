@@ -83,4 +83,5 @@ Rails.application.configure do
     :bucket => 'assetsystem'
     }
   }
+  
 end

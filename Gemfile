@@ -33,7 +33,7 @@ gem 'will_paginate-bootstrap'
 
 gem 'faker'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'figaro'
 
 # Use ActiveModel has_secure_password
