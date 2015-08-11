@@ -9,7 +9,7 @@
                 <%= link_to "AssetWire", root_path, class: "navbar-brand" %>
             </div>
             <!-- /.navbar-header -->
-
+            <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-top-links navbar-right">
                 <% if logged_in? %>
                     <li><%= current_user.first_name %> <%= current_user.last_name %></li>
@@ -33,6 +33,7 @@
                 <% end %>
                 <!-- /.dropdown -->
             </ul>
+    </div>
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
