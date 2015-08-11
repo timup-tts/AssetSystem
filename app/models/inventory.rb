@@ -1,7 +1,8 @@
 class Inventory < ActiveRecord::Base
-
+  
   # scope :by_name, -> name { where(name: name) if status.present? }
 
+  # Filter on inventories index.html
   def self.by_equipment(equipment)
     if equipment.present?
       where(equipment: equipment)
@@ -10,6 +11,7 @@ class Inventory < ActiveRecord::Base
     end
   end
 
+  # Filter on inventories index.html
   def self.by_status(status)
     if status.present?
       where(status: status)
@@ -17,10 +19,5 @@ class Inventory < ActiveRecord::Base
       all
     end
   end
-
-# def self.by_status(status)
-#    return scoped unless status.present?
-#    where(:status => status)
-# end
 
 end

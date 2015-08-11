@@ -1,7 +1,6 @@
 module ApplicationHelper
 
   # Provides full title for each page_title
-
   def full_title(page_title = '')
     base_title = "AssetWire"
     if page_title.empty?

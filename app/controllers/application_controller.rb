@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def logged_in_user
       unless logged_in?
-        flash[:danger] = "Please log in."
+        flash[:notice] = "Please log in."
         redirect_to login_url
       end
   end
@@ -25,10 +25,6 @@ class ApplicationController < ActionController::Base
 
   def log_in(user)
     session[:user_id] = user.id
-  end
-
-  def require_admin
-    redirect_to '/login' unless current_user
   end
 
 end
