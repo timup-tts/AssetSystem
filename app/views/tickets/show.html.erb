@@ -8,7 +8,6 @@
       <ul>
         <li><strong>Contact:</strong> <%= @ticket.contact %></li>
         <li><strong>Severity:</strong> <%= @ticket.severity %></li>
-        <li><strong>Assigned:</strong> <%= @ticket.assigned %></li>
         <li><strong>Summary:</strong> <%= @ticket.summary %></li>
         <li><strong>Description:</strong> <%= @ticket.description %></li>
 
@@ -17,6 +16,9 @@
       </ul>
     </div>
     <div class="col-md-6 col-sm-12">
+      <ul>
+        <li><strong>Assigned:</strong> <%= @ticket.assigned %></li>
+      </ul>
       <%= form_for @ticket do |f| %>
         <%= f.label "Attachment:" %>
         <%= f.file_field :attachment %><br>
@@ -24,7 +26,6 @@
           <p>Attached:</p>
           <p><%= link_to @ticket.attachment_file_name, @ticket.attachment.url %></p>
         <% end %>
-        <%= f.submit "Submit", class: "btn btn-primary btn-sm" %>
       <% end %>
     </div>
   </div>

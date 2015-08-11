@@ -45,30 +45,17 @@
                             <% end %>
                         </li>
                         <li><%= link_to '<i class="fa fa-dashboard fa-fw"></i> Dashboard'.html_safe, root_path %></li>
-                        <li>
-                            <a href="#"><i class="fa fa-desktop fa-fw"></i> Assets<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li><%= link_to 'Add New Asset', new_inventory_path %></li>
-                                <li><%= link_to 'View Assets', inventories_path %></li>
-                            </ul>
-                        </li>
-                        <li>
-                          <a href="#"><i class="fa fa-pencil-square-o fa-fw"></i> Contracts<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                              <li><%= link_to 'Add New Contract', new_contract_path %></li>
-                              <li><%= link_to 'View Contracts', contracts_path %></li>
-                            </ul>
-                        </li>
-                        <li>
-                          <a href="#"><i class="fa fa-life-ring fa-fw"></i> Tickets<span class="fa arrow"></span></a>
-                          <ul class="nav nav-second-level">
-                            <li><%= link_to 'Create New Ticket', new_ticket_path %></li>
-                            <li><%= link_to 'View Tickets', tickets_path %></li>
-                          </ul>
-                        </li>
-
-
-
+                        <li><%= link_to '<i class="fa fa-desktop fa-fw"></i> View Assets'.html_safe, inventories_path %></li>
+                        <li><%= link_to '<i class="fa fa-pencil-square-o fa-fw"></i> View Contracts'.html_safe, contracts_path %></li>
+                        <li><%= link_to '<i class="fa fa-life-ring fa-fw"></i> View Tickets'.html_safe, tickets_path %></li>
+                        <div class="quick-links-menu">
+                                <span><li>Quick Links</li></span>
+                                        <ul class="nav">
+                                                <li><%= link_to '<i class="fa fa-angle-double-right fa-fw"></i> New Ticket'.html_safe, new_ticket_path %></li>
+                                                <li><%= link_to '<i class="fa fa-angle-double-right fa-fw"></i> New Asset'.html_safe, new_inventory_path %></li>
+                                                <li><%= link_to '<i class="fa fa-angle-double-right fa-fw"></i> New Contract'.html_safe, new_contract_path %></li>
+                                        </ul>
+                        </div>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

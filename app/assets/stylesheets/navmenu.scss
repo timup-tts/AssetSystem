@@ -151,3 +151,17 @@ body {
 .login-panel {
     margin-top: 25%;
 }
+
+.quick-links-menu span li {
+  padding: 10px 15px;
+  color: #337ab7;
+  border-bottom: none;
+}
+
+.quick-links-menu ul li {
+    border-bottom: none;
+}
+
+// .quick-links-menu ul li:last-child {
+//   border-bottom: 1px solid #e7e7e7;
+// }
